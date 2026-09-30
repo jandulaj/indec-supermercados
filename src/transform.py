@@ -27,7 +27,6 @@ log = logging.getLogger(__name__)
 def leer_hoja(hoja: str) -> pd.DataFrame:
     return pd.read_excel(ARCHIVO, sheet_name=hoja, header=None)
 
-
 def transformar_cuadro1(raw: pd.DataFrame) -> pd.DataFrame:
     es_dato = raw[0].map(lambda v: isinstance(v, datetime))
     cuadro1 = raw.loc[es_dato, [0, 1, 2, 3, 5, 6, 8, 9]].copy()   # 4 y 7: separadoras
@@ -46,9 +45,26 @@ def transformar_cuadro1(raw: pd.DataFrame) -> pd.DataFrame:
              cuadro1["periodo"].min().date(), cuadro1["periodo"].max().date())
     return cuadro1
 
+def transformar_cuadro2(raw: pd.DataFrame) -> pd.DataFrame:
+    es_dato = raw[0].map(lambda v: isinstance(v, datetime))
+    cuadro2 = raw.loc[es_dato, [0, 1, 2, 3, 5, 6, 8, 9, 10]].copy()   # 4 y 7: separadoras
+    cuadro2.columns = [
+        "periodo",
+        "idx_corriente", "var_ia_corriente", "var_acum_corriente",
+        "idx_constante", "var_ia_constante",
+        "idx_precios_impl", "var_ia_precios_impl", "var_mensual_precios_impl",
+    ]
+    cuadro2["periodo"] = pd.to_datetime(cuadro2["periodo"])
+    numericas = cuadro2.columns[1:]
+    # "…" (dato no disponible) y cualquier texto → NaN
+    cuadro2[numericas] = cuadro2[numericas].apply(pd.to_numeric, errors="coerce")
+
+    log.info("Cuadro 2: %d filas (%s a %s)", len(cuadro2),
+             cuadro2["periodo"].min().date(), cuadro2["periodo"].max().date())
+
+    return cuadro2
 
 def transformar_cuadro5(raw: pd.DataFrame) -> pd.DataFrame:
-
     es_dato = raw[0].map(lambda v: isinstance(v, datetime))
 
     # Fila 2 = jurisdicción (combinada), fila 3 = categoría → rellenar hacia la derecha
@@ -86,6 +102,14 @@ def main() -> None:
         cuadro1 = transformar_cuadro1(leer_hoja("Cuadro 1"))
         cuadro1.to_csv(SALIDA / "indices_ventas.csv", index=False)
         log.info("Guardado %s", SALIDA / "indices_ventas.csv")
+
+        # Cuadro 2 - Indices Ventas
+        cuadro2 = transformar_cuadro2(leer_hoja("Cuadro 2"))
+        diff = (cuadro2["idx_constante"].values - cuadro1["idx_original"].values)
+        if abs(diff).max() > 0.001:
+            log.warning("Cuadro 2: idx_constante no coincide con Cuadro 1")
+        cuadro2.to_csv(SALIDA / "indices_precios.csv", index=False)
+        log.info("Guardado %s", SALIDA / "indices_precios.csv")
 
         # Cuadro 5 - Ventas Totales
         cuadro5 = transformar_cuadro5(leer_hoja("Cuadro 5."))
