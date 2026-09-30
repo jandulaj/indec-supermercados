@@ -47,13 +47,50 @@ def transformar_cuadro1(raw: pd.DataFrame) -> pd.DataFrame:
     return cuadro1
 
 
+def transformar_cuadro5(raw: pd.DataFrame) -> pd.DataFrame:
+
+    es_dato = raw[0].map(lambda v: isinstance(v, datetime))
+
+    # Fila 2 = jurisdicción (combinada), fila 3 = categoría → rellenar hacia la derecha
+    enc = raw.iloc[2:4, 1:].ffill(axis=1)
+    valores = raw.loc[es_dato, 1:].copy()
+    valores.index = pd.DatetimeIndex(raw.loc[es_dato, 0], name="periodo")
+    valores.columns = pd.MultiIndex.from_arrays(
+        [enc.iloc[0].str.strip(), enc.iloc[1].str.strip()],
+        names=["jurisdiccion", "categoria"],
+        )
+    valores = valores.dropna(axis=1, how="all")   # borra las columnas separadoras vacías
+    # De ancho a largo: una fila por período × jurisdicción × categoría
+    ventas = (valores.stack(["jurisdiccion", "categoria"], future_stack=True)
+        .rename("ventas_miles").reset_index())
+    ventas["es_confidencial"] = ventas["ventas_miles"].eq("s")   # secreto estadístico
+    ventas["ventas_miles"] = pd.to_numeric(ventas["ventas_miles"], errors="coerce")
+    ventas["es_total_pais"] = ventas["jurisdiccion"].eq("Total del país")
+    ventas["es_total_categoria"] = ventas["categoria"].eq("Total")   
+    n_jur = ventas["jurisdiccion"].nunique()
+    n_cat = ventas["categoria"].nunique()
+    n_conf = int(ventas["es_confidencial"].sum())
+    log.info("Cuadro 5: %d filas | %d jurisdicciones | %d categorías | %d confidenciales",
+        len(ventas), n_jur, n_cat, n_conf)
+    if (n_jur, n_cat) != (26, 12):   # 24 provincias con Buenos Aires dividida en GBA y resto, CABA y el total del país
+        log.warning("Cuadro 5: estructura inesperada, revisar encabezados del Excel")
+    return ventas
+
+
 def main() -> None:
     log.info("ETL iniciado")
     try:
         SALIDA.mkdir(parents=True, exist_ok=True)
+
+        # Cuadro 1 - Indices Ventas
         cuadro1 = transformar_cuadro1(leer_hoja("Cuadro 1"))
         cuadro1.to_csv(SALIDA / "indices_ventas.csv", index=False)
         log.info("Guardado %s", SALIDA / "indices_ventas.csv")
+
+        # Cuadro 5 - Ventas Totales
+        cuadro5 = transformar_cuadro5(leer_hoja("Cuadro 5."))
+        cuadro5.to_csv(SALIDA / "ventas_categoria_jurisdiccion.csv", index=False)
+        log.info("Guardado %s", SALIDA / "ventas_categoria_jurisdiccion.csv")
     except Exception:
         log.exception("ETL ERROR")        # guarda el traceback completo
         sys.exit(1)
