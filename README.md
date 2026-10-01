@@ -37,7 +37,7 @@ INDEC (.xlsx) ──► src/download.py ──► data/raw/
 ├── notebooks/               # 01_exploracion · 02_limpieza · 03_analisis
 ├── src/                     # download.py · transform.py · load_postgres.py
 ├── sql/
-│   ├── 01_schema.sql        # modelo estrella
+│   ├── 01_modelo.sql        # modelo estrella (stg → super), lo ejecuta load_postgres.py
 │   └── queries/             # una consulta por pregunta de negocio
 ├── reports/figures/         # PNG usados en este README
 └── powerbi/                 # .pbix + capturas del dashboard
@@ -47,11 +47,8 @@ INDEC (.xlsx) ──► src/download.py ──► data/raw/
 ```bash
 python -m venv .venv && .venv\Scripts\activate      # Windows
 pip install -r requirements.txt
-python src/download.py                              # baja la última versión del INDEC
-python src/transform.py                             # genera data/processed/
-psql -d indec -f sql/01_schema.sql                  # crea el modelo
-python src/load_postgres.py                         # carga los CSV (usa .env)
-```
+python src/transform.py        # Excel INDEC → data/processed/*.csv
+python src/load_postgres.py    # CSV → PostgreSQL (staging + modelo estrella), conexión en .env```
 
 ## Fuente
 INDEC, Encuesta de Supermercados. Ver [`docs/fuente_datos.md`](docs/fuente_datos.md).
