@@ -15,3 +15,5 @@ venv/
 # SO
 .DS_Store
 Thumbs.db
+logs/
+.~lock.*#
