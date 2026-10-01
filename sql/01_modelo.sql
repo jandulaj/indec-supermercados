@@ -72,13 +72,13 @@ ALTER TABLE super.fact_indices ADD PRIMARY KEY (periodo),
     ADD FOREIGN KEY (periodo) REFERENCES super.dim_periodo;
 
 CREATE TABLE super.fact_ventas_canal AS
-SELECT periodo::date AS periodo, canal, ventas_miles
+SELECT periodo::date AS periodo, canal, ventas_miles::numeric(18,3) AS ventas_miles
 FROM stg.ventas_canal;
 ALTER TABLE super.fact_ventas_canal ADD PRIMARY KEY (periodo, canal),
     ADD FOREIGN KEY (periodo) REFERENCES super.dim_periodo;
 
 CREATE TABLE super.fact_ventas_medio_pago AS
-SELECT periodo::date AS periodo, medio_pago, ventas_miles
+SELECT periodo::date AS periodo, medio_pago, ventas_miles::numeric(18,3) AS ventas_miles
 FROM stg.ventas_medio_pago;
 ALTER TABLE super.fact_ventas_medio_pago ADD PRIMARY KEY (periodo, medio_pago),
     ADD FOREIGN KEY (periodo) REFERENCES super.dim_periodo;
@@ -86,7 +86,7 @@ ALTER TABLE super.fact_ventas_medio_pago ADD PRIMARY KEY (periodo, medio_pago),
 -- Los totales (país / categoría) quedan en la tabla: se filtran con dim.es_total
 CREATE TABLE super.fact_ventas_categoria AS
 SELECT s.periodo::date AS periodo, j.jurisdiccion_id, c.categoria_id,
-       s.ventas_miles, s.es_confidencial
+       s.ventas_miles::numeric(18,3) AS ventas_miles, s.es_confidencial       
 FROM stg.ventas_categoria_jurisdiccion s
 JOIN super.dim_jurisdiccion j ON j.nombre = s.jurisdiccion
 JOIN super.dim_categoria    c ON c.nombre = s.categoria;
