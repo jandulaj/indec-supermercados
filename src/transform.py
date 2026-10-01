@@ -64,6 +64,34 @@ def transformar_cuadro2(raw: pd.DataFrame) -> pd.DataFrame:
 
     return cuadro2
 
+def transformar_cuadro4(raw: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+    es_dato = raw[0].map(lambda v: isinstance(v, datetime))
+
+    # 1. Elegir columnas por posición y nombrarlas (como en el Cuadro 1)
+    df = raw.loc[es_dato, [0, 1, 3, 4, 6, 7, 8, 9]].copy()        # 2 y 5: separadoras
+    df.columns = ["periodo", "total", "salon", "online",
+                  "efectivo", "debito", "credito", "otros"]
+    df["periodo"] = pd.to_datetime(df["periodo"])
+    numericas = df.columns[1:]
+    df[numericas] = df[numericas].apply(pd.to_numeric, errors="coerce")
+
+    # 2. Validar contra el total (después se descarta)
+    dif_canal = (df["salon"] + df["online"] - df["total"]).abs() / df["total"]
+    dif_pago = (df[["efectivo", "debito", "credito", "otros"]].sum(axis=1) - df["total"]).abs() / df["total"]
+    if dif_canal.max() > 0.001 or dif_pago.max() > 0.001:
+        log.warning("Cuadro 4: las partes no suman el total (máx. dif. canal %.4f%%, pago %.4f%%)",
+                    dif_canal.max() * 100, dif_pago.max() * 100)
+
+    # 3. De ancho a largo: dos tablas independientes
+    canal = df.melt(id_vars="periodo", value_vars=["salon", "online"],
+                    var_name="canal", value_name="ventas_miles")
+    medio_pago = df.melt(id_vars="periodo", value_vars=["efectivo", "debito", "credito", "otros"],
+                         var_name="medio_pago", value_name="ventas_miles")
+
+    log.info("Cuadro 4: %d meses | canal %d filas | medio de pago %d filas",
+             len(df), len(canal), len(medio_pago))
+    return canal, medio_pago
+
 def transformar_cuadro5(raw: pd.DataFrame) -> pd.DataFrame:
     es_dato = raw[0].map(lambda v: isinstance(v, datetime))
 
@@ -110,6 +138,13 @@ def main() -> None:
             log.warning("Cuadro 2: idx_constante no coincide con Cuadro 1")
         cuadro2.to_csv(SALIDA / "indices_precios.csv", index=False)
         log.info("Guardado %s", SALIDA / "indices_precios.csv")
+
+        # Cuadro 4 - Ventas por Canal y Medio de Pago
+        canal, medio_pago = transformar_cuadro4(leer_hoja("Cuadro 4."))
+        canal.to_csv(SALIDA / "ventas_canal.csv", index=False)
+        medio_pago.to_csv(SALIDA / "ventas_medio_pago.csv", index=False)
+        log.info("Guardado %s", SALIDA / "ventas_canal.csv")
+        log.info("Guardado %s", SALIDA / "ventas_medio_pago.csv")
 
         # Cuadro 5 - Ventas Totales
         cuadro5 = transformar_cuadro5(leer_hoja("Cuadro 5."))
