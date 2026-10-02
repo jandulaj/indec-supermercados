@@ -12,13 +12,18 @@ DROP TABLE IF EXISTS super.fact_ventas_categoria, super.fact_ventas_medio_pago,
 -- ---------------------------------------------------------------------
 -- Dimensiones
 -- ---------------------------------------------------------------------
+-- Calendario diario continuo (años completos): Power BI lo exige para
+-- "Marcar como tabla de fechas". Los hechos son mensuales y usan el día 1.
 CREATE TABLE super.dim_periodo AS
-SELECT DISTINCT
-       periodo::date                      AS periodo,
-       EXTRACT(YEAR    FROM periodo)::int AS anio,
-       EXTRACT(MONTH   FROM periodo)::int AS mes,
-       EXTRACT(QUARTER FROM periodo)::int AS trimestre
-FROM stg.indices_ventas;
+SELECT d::date                               AS periodo,
+       EXTRACT(YEAR    FROM d)::int          AS anio,
+       EXTRACT(MONTH   FROM d)::int          AS mes,
+       EXTRACT(QUARTER FROM d)::int          AS trimestre,
+       date_trunc('month', d)::date          AS inicio_mes
+FROM generate_series(
+        (SELECT date_trunc('year', min(periodo)) FROM stg.indices_ventas),
+        (SELECT date_trunc('year', max(periodo)) + interval '1 year - 1 day' FROM stg.indices_ventas),
+        interval '1 day') AS d;
 ALTER TABLE super.dim_periodo ADD PRIMARY KEY (periodo);
 
 CREATE TABLE super.dim_jurisdiccion AS
@@ -86,7 +91,7 @@ ALTER TABLE super.fact_ventas_medio_pago ADD PRIMARY KEY (periodo, medio_pago),
 -- Los totales (país / categoría) quedan en la tabla: se filtran con dim.es_total
 CREATE TABLE super.fact_ventas_categoria AS
 SELECT s.periodo::date AS periodo, j.jurisdiccion_id, c.categoria_id,
-       s.ventas_miles::numeric(18,3) AS ventas_miles, s.es_confidencial       
+       s.ventas_miles::numeric(18,3) AS ventas_miles, s.es_confidencial
 FROM stg.ventas_categoria_jurisdiccion s
 JOIN super.dim_jurisdiccion j ON j.nombre = s.jurisdiccion
 JOIN super.dim_categoria    c ON c.nombre = s.categoria;
