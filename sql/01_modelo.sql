@@ -83,7 +83,15 @@ ALTER TABLE super.fact_ventas_canal ADD PRIMARY KEY (periodo, canal),
     ADD FOREIGN KEY (periodo) REFERENCES super.dim_periodo;
 
 CREATE TABLE super.fact_ventas_medio_pago AS
-SELECT periodo::date AS periodo, medio_pago, ventas_miles::numeric(18,3) AS ventas_miles
+SELECT periodo::date AS periodo,
+       medio_pago,
+       CASE medio_pago WHEN 'efectivo' THEN 'Efectivo'
+                       WHEN 'debito'   THEN 'Débito'
+                       WHEN 'credito'  THEN 'Crédito'
+                       WHEN 'otros'    THEN 'Otros (billeteras, QR)' END AS medio_pago_desc,
+       CASE medio_pago WHEN 'efectivo' THEN 1 WHEN 'debito' THEN 2
+                       WHEN 'credito'  THEN 3 WHEN 'otros'  THEN 4 END   AS orden_medio,
+       ventas_miles::numeric(18,3) AS ventas_miles
 FROM stg.ventas_medio_pago;
 ALTER TABLE super.fact_ventas_medio_pago ADD PRIMARY KEY (periodo, medio_pago),
     ADD FOREIGN KEY (periodo) REFERENCES super.dim_periodo;
