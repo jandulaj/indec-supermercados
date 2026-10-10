@@ -6,9 +6,15 @@ Análisis de la **Encuesta de Supermercados del INDEC** (serie mensual, enero 20
 
 ## Preguntas de negocio
 1. ¿Cuánto crecieron o cayeron **realmente** las ventas (a precios constantes) y dónde estamos frente al pico?
+En julio de 2026, el volumen vendido en supermercados (serie desestacionalizada) está 21,7 % por debajo del máximo de la serie (enero 2017) y apenas 1 % arriba del mínimo de marzo 2024. La caída se dio en dos escalones: 2018–2019 (−12 % acumulado) y 2024 (−11 % en un solo año), que borró la recuperación lenta de 2020–2023. Tras un rebote en 2025 (+2 %), los primeros siete meses de 2026 vuelven a caer (−2,7 % interanual).
+
+
+Contexto, como hipótesis: los dos escalones coinciden con las devaluaciones y picos inflacionarios de 2018–2019 y de fines de 2023–2024.
 2. ¿Cuánto del crecimiento nominal es **precio** y cuánto es **volumen**?
 3. ¿Cómo cambió la **canasta**: básicos vs. discrecionales?
 4. ¿Cómo **pagan** los clientes: efectivo vs. débito, crédito y billeteras?
+El efectivo pasó de 35,5 % de las ventas en 2017 a 16,8 % en 2026 (−18,7 pp), con la caída más fuerte en 2024. El crédito se consolidó como el principal medio de pago (43 %) y "otros medios", que incluye billeteras virtuales y QR, casi se triplicó desde 2023 hasta llegar al 15 %. Hipótesis: la financiación en cuotas en un contexto de alta inflación y la adopción de pagos digitales. (2026: enero a julio.)
+
 5. ¿Qué **provincias** ganan y cuáles pierden en términos reales?
 
 Detalle, métricas y supuestos: [`docs/preguntas_negocio.md`](docs/preguntas_negocio.md)
