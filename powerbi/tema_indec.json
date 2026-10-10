@@ -1,0 +1,101 @@
+{
+  "name": "Supermercados INDEC - Portfolio",
+  "dataColors": [
+    "#3D5A99",
+    "#D35F1E",
+    "#0B9FB0",
+    "#8E5BB5",
+    "#9AA8BA",
+    "#C9CED6",
+    "#E3E6EA",
+    "#0B2545"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#1F2937",
+  "tableAccent": "#0B2545",
+  "good": "#0B9FB0",
+  "neutral": "#9AA8BA",
+  "bad": "#D35F1E",
+  "maximum": "#0B2545",
+  "center": "#9AA8BA",
+  "minimum": "#E3E6EA",
+  "null": "#C9CED6",
+  "hyperlink": "#0B9FB0",
+  "visitedHyperlink": "#3D5A99",
+  "textClasses": {
+    "callout": {
+      "fontSize": 32,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#0B2545"
+    },
+    "title": {
+      "fontSize": 12,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#0B2545"
+    },
+    "header": {
+      "fontSize": 12,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#1F2937"
+    },
+    "label": {
+      "fontSize": 10,
+      "fontFace": "Segoe UI",
+      "color": "#6B7280"
+    }
+  },
+  "visualStyles": {
+    "page": {
+      "*": {
+        "background": [
+          { "color": { "solid": { "color": "#EEF2F6" } }, "transparency": 0 }
+        ],
+        "outspace": [
+          { "color": { "solid": { "color": "#EEF2F6" } } }
+        ]
+      }
+    },
+    "*": {
+      "*": {
+        "background": [
+          { "show": true, "color": { "solid": { "color": "#FFFFFF" } }, "transparency": 0 }
+        ],
+        "border": [
+          { "show": true, "color": { "solid": { "color": "#DDE3EA" } }, "radius": 10 }
+        ],
+        "dropShadow": [
+          { "show": false }
+        ],
+        "title": [
+          { "fontColor": { "solid": { "color": "#0B2545" } }, "fontSize": 12, "fontFamily": "Segoe UI Semibold" }
+        ],
+        "valueAxis": [
+          {
+            "gridlineColor": { "solid": { "color": "#EDF0F3" } },
+            "labelColor": { "solid": { "color": "#9CA3AF" } },
+            "titleColor": { "solid": { "color": "#6B7280" } }
+          }
+        ],
+        "categoryAxis": [
+          {
+            "labelColor": { "solid": { "color": "#9CA3AF" } },
+            "titleColor": { "solid": { "color": "#6B7280" } }
+          }
+        ],
+        "legend": [
+          { "labelColor": { "solid": { "color": "#6B7280" } }, "fontSize": 9 }
+        ]
+      }
+    },
+    "slicer": {
+      "*": {
+        "background": [
+          { "show": false }
+        ],
+        "border": [
+          { "show": false }
+        ]
+      }
+    }
+  }
+}
