@@ -1,0 +1,51 @@
+table 'super fact_ventas_canal'
+	lineageTag: fe9d8581-a617-4fee-884a-757fa879001b
+
+	measure 'Ventas canal' = SUM ( 'super fact_ventas_canal'[ventas_miles] )
+		lineageTag: 2f2abba9-602d-46d0-8b09-2405bdff995b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column periodo
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 63e89a17-cc70-4d32-9c1f-f71a12a4ce60
+		summarizeBy: none
+		sourceColumn: periodo
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column canal
+		dataType: string
+		lineageTag: 1c6bedbc-1e11-438d-8ee1-9dfb341e8815
+		summarizeBy: none
+		sourceColumn: canal
+
+		annotation SummarizationSetBy = Automatic
+
+	column ventas_miles
+		dataType: double
+		lineageTag: fb271a28-9e82-4d40-94e7-2062b020b4a8
+		summarizeBy: sum
+		sourceColumn: ventas_miles
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'super fact_ventas_canal' = m
+		mode: import
+		source =
+				let
+				  Origen = PostgreSQL.Database("aws-0-sa-east-1.pooler.supabase.com", "postgres"),
+				  #"Navegación 1" = Origen{[Schema = "super", Item = "fact_ventas_canal"]}[Data]
+				in
+				  #"Navegación 1"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,202 @@
+table 'super fact_indices'
+	lineageTag: 2eb8121d-3800-4ee3-98a1-10dec33455ce
+
+	measure 'Indice Actual' =
+			
+			VAR UltimoPeriodo =
+			    CALCULATE(
+			        MAX('super fact_indices'[periodo]),
+			        REMOVEFILTERS('super dim_periodo')
+			    )
+			RETURN
+			    CALCULATE(
+			        MAX('super fact_indices'[idx_desest]),
+			        REMOVEFILTERS('super dim_periodo'),
+			        'super fact_indices'[periodo] = UltimoPeriodo
+			    )
+		formatString: 0.0
+		lineageTag: 85dc2f09-4950-47b9-9239-2360a3f52365
+
+	measure 'Primer Indice' =
+			
+			VAR PrimerPeriodo =
+			    CALCULATE(
+			        MIN('super fact_indices'[periodo]),
+			        REMOVEFILTERS('super dim_periodo')
+			    )
+			RETURN
+			    CALCULATE(
+			        MAX('super fact_indices'[idx_desest]),
+			         REMOVEFILTERS('super dim_periodo'),
+			        'super fact_indices'[periodo] = PrimerPeriodo
+			    )
+		lineageTag: 80b036b5-d7c7-42e7-abb0-e62ef54c3111
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Marcas desest' =
+			
+			VAR v      = AVERAGE ( 'super fact_indices'[idx_desest] )
+			VAR maxv   = CALCULATE ( MAX ( 'super fact_indices'[idx_desest] ), ALLSELECTED ( 'super dim_periodo' ) )
+			VAR minv   = CALCULATE ( MIN ( 'super fact_indices'[idx_desest] ), ALLSELECTED ( 'super dim_periodo' ) )
+			VAR ultima = CALCULATE ( MAX ( 'super fact_indices'[periodo] ), ALLSELECTED ( 'super dim_periodo' ) )
+			VAR actual = MAX ( 'super fact_indices'[periodo] )
+			RETURN
+			    IF ( NOT ISBLANK ( v ) && ( v = maxv || v = minv || actual = ultima ), v )
+		lineageTag: bce0e3e9-14ea-42fa-a68b-ca36dbddbc95
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Subtítulo evolución' =
+			
+			VAR maxv   = CALCULATE ( MAX ( 'super fact_indices'[idx_desest] ), ALLSELECTED ( 'super dim_periodo' ) )
+			VAR ultima = CALCULATE ( MAX ( 'super fact_indices'[periodo] ), ALLSELECTED ( 'super dim_periodo' ) )
+			VAR vult   = CALCULATE ( MAX ( 'super fact_indices'[idx_desest] ),
+			                         ALLSELECTED ( 'super dim_periodo' ), 'super dim_periodo'[periodo] = ultima )
+			RETURN
+			    "Último dato (" & FORMAT ( ultima, "mmm yyyy" ) & "): "
+			        & FORMAT ( DIVIDE ( vult, maxv ) - 1, "0 %" ) & " respecto del máximo del período"
+		lineageTag: 305a318a-2b0e-4449-b525-006fdf91be8e
+
+	measure 'Indice Máximo' = ```
+			
+			    CALCULATE(
+			        MAX('super fact_indices'[idx_desest]),
+			        ALL('super dim_periodo')
+			    )
+			```
+		lineageTag: 6ed3126c-af10-4d3e-8d84-8ba21fc7664c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Distancia al Máximo' = 'super fact_indices'[Indice Actual]/'super fact_indices'[Indice Máximo]-1
+		formatString: 0\ %;-0\ %;0\ %
+		lineageTag: 7baa348d-0749-4dcc-b361-cf79e8bd5988
+
+	measure 'Acumulado año' =
+			
+			VAR ultima = CALCULATE ( MAX ( 'super fact_indices'[periodo] ), ALLSELECTED ( 'super dim_periodo' ) )
+			RETURN
+			    CALCULATE (
+			        MAX ( 'super fact_indices'[var_acum] ),
+			        ALLSELECTED ( 'super dim_periodo' ),
+			        'super dim_periodo'[periodo] = ultima
+			    ) / 100
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		lineageTag: 912b7518-46ce-4256-a753-acc0ac53b5c3
+
+	column periodo
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 4b4f3e68-400d-4bd0-8211-9a0708fab345
+		summarizeBy: none
+		sourceColumn: periodo
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column idx_original
+		dataType: double
+		lineageTag: 8cb67436-2485-4aff-baa3-cb4c617cfe5e
+		summarizeBy: none
+		sourceColumn: idx_original
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column idx_desest
+		dataType: double
+		lineageTag: 208122e8-b6f6-45e3-9c97-5be8c4e27644
+		summarizeBy: none
+		sourceColumn: idx_desest
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column idx_tendencia
+		dataType: double
+		lineageTag: b1746372-3725-475a-8b78-91cf2f79828d
+		summarizeBy: none
+		sourceColumn: idx_tendencia
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column var_ia
+		dataType: double
+		lineageTag: a6736838-4d96-4263-b98c-9a52ef9d1828
+		summarizeBy: none
+		sourceColumn: var_ia
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column var_acum
+		dataType: double
+		lineageTag: 1964c40b-d8a9-4951-8212-64b8d391e5ca
+		summarizeBy: none
+		sourceColumn: var_acum
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column var_mensual_desest
+		dataType: double
+		lineageTag: 8edb0b5d-3bda-4417-8f4e-726c8648ccde
+		summarizeBy: none
+		sourceColumn: var_mensual_desest
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column idx_corriente
+		dataType: double
+		lineageTag: 5595f3de-5d28-41c4-b719-33e9dc9aafb8
+		summarizeBy: none
+		sourceColumn: idx_corriente
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column idx_precios_impl
+		dataType: double
+		lineageTag: 054fafaf-a50c-48b9-96c3-d67cf08528e7
+		summarizeBy: none
+		sourceColumn: idx_precios_impl
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column var_ia_precios_impl
+		dataType: double
+		lineageTag: 3ff833e1-9002-4c23-b984-11f43f40148b
+		summarizeBy: none
+		sourceColumn: var_ia_precios_impl
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'super fact_indices' = m
+		mode: import
+		source =
+				let
+				  Origen = PostgreSQL.Database("aws-0-sa-east-1.pooler.supabase.com", "postgres"),
+				  #"Navegación 1" = Origen{[Schema = "super", Item = "fact_indices"]}[Data]
+				in
+				  #"Navegación 1"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,113 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 33
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 791.88925028785422,
+            "y": 0
+          },
+          "nodeIndex": "super dim_categoria",
+          "nodeLineageTag": "72fedf3d-1317-4257-a4e7-e1941a644fd2",
+          "size": {
+            "height": 188,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1191.6589149592776,
+            "y": 294.34185555397818
+          },
+          "nodeIndex": "super dim_jurisdiccion",
+          "nodeLineageTag": "22c47470-3996-4e8e-a533-8288304737d0",
+          "size": {
+            "height": 220,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 349.20647263040564,
+            "y": 256.00913855822205
+          },
+          "nodeIndex": "super dim_periodo",
+          "nodeLineageTag": "cab00183-947f-45ea-aa30-3ec693653c39",
+          "size": {
+            "height": 244,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 12,
+            "y": 197.16342314120334
+          },
+          "nodeIndex": "super fact_indices",
+          "nodeLineageTag": "2eb8121d-3800-4ee3-98a1-10dec33455ce",
+          "size": {
+            "height": 361,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 350.69635973061082,
+            "y": 0
+          },
+          "nodeIndex": "super fact_ventas_canal",
+          "nodeLineageTag": "fe9d8581-a617-4fee-884a-757fa879001b",
+          "size": {
+            "height": 185,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 759.81705594911693,
+            "y": 264.84185901016065
+          },
+          "nodeIndex": "super fact_ventas_categoria",
+          "nodeLineageTag": "8909099d-09de-478f-aa5c-f95123f1dfe9",
+          "size": {
+            "height": 337,
+            "width": 282
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 349,
+            "y": 559.16852027631239
+          },
+          "nodeIndex": "super fact_ventas_medio_pago",
+          "nodeLineageTag": "7d4c8b3b-0a63-4f12-9390-aa8fd98a00c8",
+          "size": {
+            "height": 208,
+            "width": 234
+          },
+          "zIndex": 7
+        }
+      ],
+      "name": "Todas las tablas",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas las tablas",
+  "defaultDiagram": "Todas las tablas"
+}

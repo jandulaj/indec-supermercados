@@ -1,0 +1,72 @@
+table 'super dim_periodo'
+	lineageTag: cab00183-947f-45ea-aa30-3ec693653c39
+	dataCategory: Time
+
+	column periodo
+		dataType: dateTime
+		isKey
+		formatString: Short Date
+		lineageTag: 29fef4b6-b67b-4055-98dc-d2b462e05f77
+		summarizeBy: none
+		sourceColumn: periodo
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column anio
+		dataType: int64
+		formatString: 0
+		lineageTag: 4fcb8623-e276-454e-b256-5acf3537dfc7
+		summarizeBy: none
+		sourceColumn: anio
+
+		annotation SummarizationSetBy = User
+
+	column mes
+		dataType: int64
+		formatString: 0
+		lineageTag: 66a7b972-c653-412a-a6b3-5a4ffb31456c
+		summarizeBy: none
+		sourceColumn: mes
+
+		annotation SummarizationSetBy = User
+
+	column trimestre
+		dataType: int64
+		formatString: 0
+		lineageTag: 18d4c56a-056c-4a82-819c-b90537e9c436
+		summarizeBy: none
+		sourceColumn: trimestre
+
+		annotation SummarizationSetBy = User
+
+	column inicio_mes
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: d16f4584-9b0f-49b8-8ad6-d70439655d3b
+		summarizeBy: none
+		sourceColumn: inicio_mes
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column con_datos = 'super dim_periodo'[periodo] <= EOMONTH ( MAX ( 'super fact_indices'[periodo] ), 0 )
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 6bb06265-c109-4f60-ae5e-6a97d872a8b1
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'super dim_periodo' = m
+		mode: import
+		source =
+				let
+				  Origen = PostgreSQL.Database("aws-0-sa-east-1.pooler.supabase.com", "postgres"),
+				  #"Navegación 1" = Origen{[Schema = "super", Item = "dim_periodo"]}[Data]
+				in
+				  #"Navegación 1"
+
+	annotation PBI_ResultType = Table
+

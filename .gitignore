@@ -17,3 +17,6 @@ venv/
 Thumbs.db
 logs/
 .~lock.*#
+
+**/.pbi/localSettings.json
+**/.pbi/cache.abf

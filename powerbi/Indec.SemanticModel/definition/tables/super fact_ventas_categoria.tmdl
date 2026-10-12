@@ -1,0 +1,116 @@
+table 'super fact_ventas_categoria'
+	lineageTag: 8909099d-09de-478f-aa5c-f95123f1dfe9
+
+	measure 'Ventas por categoría' =
+			
+			CALCULATE (
+			    SUM ( 'super fact_ventas_categoria'[ventas_miles] ),
+			    'super dim_jurisdiccion'[es_total] = TRUE (),    -- total país: dato completo, sin "s"
+			    'super dim_categoria'[es_total] = FALSE ()
+			)
+		lineageTag: b28dc00c-271d-409c-bc13-bca24532360d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Ventas por jurisdicción' =
+			
+			CALCULATE (
+			    SUM ( 'super fact_ventas_categoria'[ventas_miles] ),
+			    'super dim_jurisdiccion'[es_total] = FALSE (),
+			    'super dim_categoria'[es_total] = TRUE ()        -- total de la provincia: dato completo
+			)
+		lineageTag: 0c1dd16b-1268-409a-ba43-234a34329392
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Ventas reales por jurisdicción' =
+			
+			SUMX (
+			    VALUES ( 'super dim_periodo'[inicio_mes] ),
+			    DIVIDE (
+			        [Ventas por jurisdicción],
+			        CALCULATE ( MAX ( 'super fact_indices'[idx_precios_impl] ) ) / 100
+			    )
+			)
+		lineageTag: 3826a803-f6a6-4070-a2e5-4683669f598e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Var i.a. real jurisdicción' =
+			
+			VAR actual = CALCULATE ( [Ventas reales por jurisdicción], 'super dim_periodo'[con_datos] = TRUE () )
+			VAR fechas = CALCULATETABLE ( VALUES ( 'super dim_periodo'[periodo] ), 'super dim_periodo'[con_datos] = TRUE () )
+			VAR anterior = CALCULATE ( [Ventas reales por jurisdicción], SAMEPERIODLASTYEAR ( fechas ) )
+			RETURN DIVIDE ( actual, anterior ) - 1
+		lineageTag: c8f9dc97-3aad-4cb7-b2f0-80f9d4b48e42
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column periodo
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 548c7c8c-c590-4a9e-b3c9-ec029148328c
+		summarizeBy: none
+		sourceColumn: periodo
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column jurisdiccion_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 44656084-d673-41a9-8506-5626b4c62781
+		summarizeBy: none
+		sourceColumn: jurisdiccion_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column categoria_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 27a4b8ea-338b-47c6-8bda-3a45206c5d5c
+		summarizeBy: none
+		sourceColumn: categoria_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ventas_miles
+		dataType: double
+		lineageTag: ad6f43c6-f95b-4f76-8cf3-492d7f12ec67
+		summarizeBy: sum
+		sourceColumn: ventas_miles
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column es_confidencial
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 881215cd-9fe6-4d05-9d9e-b73cea6a4c01
+		summarizeBy: none
+		sourceColumn: es_confidencial
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'super fact_ventas_categoria' = m
+		mode: import
+		source =
+				let
+				  Origen = PostgreSQL.Database("aws-0-sa-east-1.pooler.supabase.com", "postgres"),
+				  #"Navegación 1" = Origen{[Schema = "super", Item = "fact_ventas_categoria"]}[Data]
+				in
+				  #"Navegación 1"
+
+	annotation PBI_ResultType = Table
+

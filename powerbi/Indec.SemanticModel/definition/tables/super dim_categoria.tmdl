@@ -1,0 +1,53 @@
+table 'super dim_categoria'
+	lineageTag: 72fedf3d-1317-4257-a4e7-e1941a644fd2
+
+	column categoria_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7521064e-d45c-463c-b396-97c0b75c847b
+		summarizeBy: none
+		sourceColumn: categoria_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre
+		dataType: string
+		lineageTag: b0b46d24-4301-4d76-9a67-8d925f342be8
+		summarizeBy: none
+		sourceColumn: nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column tipo
+		dataType: string
+		lineageTag: 31713c0f-4a80-4d8e-959a-5770b488fcd6
+		summarizeBy: none
+		sourceColumn: tipo
+
+		annotation SummarizationSetBy = Automatic
+
+	column es_total
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: cbadb725-842b-418b-acbd-188ba6b391ca
+		summarizeBy: none
+		sourceColumn: es_total
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'super dim_categoria' = m
+		mode: import
+		source =
+				let
+				  Origen = PostgreSQL.Database("aws-0-sa-east-1.pooler.supabase.com", "postgres"),
+				  #"Navegación 1" = Origen{[Schema = "super", Item = "dim_categoria"]}[Data]
+				in
+				  #"Navegación 1"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

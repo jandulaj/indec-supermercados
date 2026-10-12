@@ -1,0 +1,25 @@
+model Model
+	culture: es-ES
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-AR
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["super dim_categoria","super dim_jurisdiccion","super dim_periodo","super fact_indices","super fact_ventas_canal","super fact_ventas_categoria","super fact_ventas_medio_pago"]
+
+annotation PBI_ProTooling = ["DaxQueryView_Desktop","DevMode"]
+
+ref table 'super dim_categoria'
+ref table 'super dim_jurisdiccion'
+ref table 'super dim_periodo'
+ref table 'super fact_indices'
+ref table 'super fact_ventas_canal'
+ref table 'super fact_ventas_categoria'
+ref table 'super fact_ventas_medio_pago'
+
+ref cultureInfo es-ES
+

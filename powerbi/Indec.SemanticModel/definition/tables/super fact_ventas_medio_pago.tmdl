@@ -1,0 +1,119 @@
+table 'super fact_ventas_medio_pago'
+	lineageTag: 7d4c8b3b-0a63-4f12-9390-aa8fd98a00c8
+
+	measure 'Ventas medio de pago' = ```
+			SUM ( 'super fact_ventas_medio_pago'[ventas_miles] )
+			
+			```
+		lineageTag: 97023541-40c3-4f45-941b-a7faac42ef53
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% medio de pago' =
+			
+			DIVIDE (
+			    [Ventas medio de pago],
+			    CALCULATE (
+			        [Ventas medio de pago],
+			        REMOVEFILTERS (
+			            'super fact_ventas_medio_pago'[medio_pago],
+			            'super fact_ventas_medio_pago'[medio_pago_desc],
+			            'super fact_ventas_medio_pago'[orden_medio]
+			        )
+			    )
+			)
+		formatString: 0\ %;-0\ %;0\ %
+		lineageTag: 72b81548-1de3-4778-921f-55f00a4e92f6
+
+	measure '% efectivo último año' =
+			
+			VAR anioUlt = YEAR ( CALCULATE ( MAX ( 'super fact_ventas_medio_pago'[periodo] ), ALLSELECTED ( 'super dim_periodo' ) ) )
+			RETURN
+			    CALCULATE (
+			        [% medio de pago],
+			        'super fact_ventas_medio_pago'[medio_pago] = "efectivo",
+			        ALLSELECTED ( 'super dim_periodo' ),
+			        'super dim_periodo'[anio] = anioUlt
+			    )
+		formatString: 0\ %;-0\ %;0\ %
+		lineageTag: a9a56706-c41b-465e-8f70-f625aaf5ce34
+
+	column periodo
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: db9761c8-f1c0-4916-bc4f-aab243028b68
+		summarizeBy: none
+		sourceColumn: periodo
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column medio_pago
+		dataType: string
+		lineageTag: 7f227cb2-9190-48d6-90d3-985632a4ff7e
+		summarizeBy: none
+		sourceColumn: medio_pago
+		sortByColumn: orden_medio
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column ventas_miles
+		dataType: double
+		lineageTag: 348f6046-ec3c-46fd-9b30-89981b14e528
+		summarizeBy: sum
+		sourceColumn: ventas_miles
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column medio_pago_desc
+		dataType: string
+		lineageTag: 637f5bfe-6af9-4592-8dd0-a6fa7488e945
+		summarizeBy: none
+		sourceColumn: medio_pago_desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column orden
+		dataType: string
+		lineageTag: b21af121-3e5d-4246-bd16-6b8cb919901a
+		summarizeBy: none
+		sourceColumn: orden
+
+		annotation SummarizationSetBy = Automatic
+
+	column orden_medio
+		dataType: int64
+		formatString: 0
+		lineageTag: 31ed5fb6-098b-4230-b72e-680c7f567dc4
+		summarizeBy: none
+		sourceColumn: orden_medio
+
+		annotation SummarizationSetBy = User
+
+	partition 'super fact_ventas_medio_pago' = m
+		mode: import
+		source =
+				let
+				  Origen = PostgreSQL.Database("aws-0-sa-east-1.pooler.supabase.com", "postgres"),
+				  #"Navegación 1" = Origen{[Schema = "super", Item = "fact_ventas_medio_pago"]}[Data],
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Navegación 1","credito","Crédito",Replacer.ReplaceText,{"medio_pago"}),
+				    #"Valor reemplazado1" = Table.ReplaceValue(#"Valor reemplazado","efectivo","Efectivo",Replacer.ReplaceText,{"medio_pago"}),
+				    #"Valor reemplazado2" = Table.ReplaceValue(#"Valor reemplazado1","debito","Débito",Replacer.ReplaceText,{"medio_pago"}),
+				    #"Valor reemplazado3" = Table.ReplaceValue(#"Valor reemplazado2","otros","Otros",Replacer.ReplaceText,{"medio_pago"}),
+				    #"Columna condicional agregada" = Table.AddColumn(#"Valor reemplazado3", "Personalizado", each if [medio_pago] = "Efectivo" then 1 else if [medio_pago] = "Otros" then 2 else if [medio_pago] = "Crédito" then 3 else if [medio_pago] = "Débito" then 4 else null),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Columna condicional agregada",{{"Personalizado", "orden"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

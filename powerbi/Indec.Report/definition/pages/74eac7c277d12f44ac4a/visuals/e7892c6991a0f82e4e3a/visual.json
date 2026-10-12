@@ -1,0 +1,33 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "e7892c6991a0f82e4e3a",
+  "position": {
+    "x": 1381.3333333333333,
+    "y": 544,
+    "z": 5000,
+    "height": 66.666666666666671,
+    "width": 526.66666666666663,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Picos puntuales: mar-2020 (acopio al inicio de la pandemia) y dic-2023 (compras anticipadas antes de la devaluación), hipótesis. Fuente: INDEC. 2026: enero a julio."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

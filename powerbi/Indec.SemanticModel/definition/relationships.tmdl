@@ -1,0 +1,36 @@
+relationship 677b34ec-ad96-4042-89d6-3d663c05833e
+	fromColumn: 'super fact_indices'.periodo
+	toColumn: 'super dim_periodo'.periodo
+
+	annotation PBI_IsFromSource = FS
+
+relationship 8f947b6e-85c8-46df-8783-88fc47719fdf
+	fromColumn: 'super fact_ventas_canal'.periodo
+	toColumn: 'super dim_periodo'.periodo
+
+	annotation PBI_IsFromSource = FS
+
+relationship cd8f7f72-043e-48e3-925f-59da0f1b7920
+	fromColumn: 'super fact_ventas_categoria'.categoria_id
+	toColumn: 'super dim_categoria'.categoria_id
+
+	annotation PBI_IsFromSource = FS
+
+relationship be343c3f-468b-496b-9c0a-da3563ea0ac3
+	fromColumn: 'super fact_ventas_categoria'.jurisdiccion_id
+	toColumn: 'super dim_jurisdiccion'.jurisdiccion_id
+
+	annotation PBI_IsFromSource = FS
+
+relationship af43bd69-f537-4862-bab6-b227d627bb51
+	fromColumn: 'super fact_ventas_categoria'.periodo
+	toColumn: 'super dim_periodo'.periodo
+
+	annotation PBI_IsFromSource = FS
+
+relationship 1d86ca68-5fb2-4450-91b3-8fd64aa33083
+	fromColumn: 'super fact_ventas_medio_pago'.periodo
+	toColumn: 'super dim_periodo'.periodo
+
+	annotation PBI_IsFromSource = FS
+

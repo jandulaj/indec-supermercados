@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Indec"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d8eb0d98-e69c-41ea-8cc9-85afa66802d6"
+  }
+}

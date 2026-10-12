@@ -1,0 +1,59 @@
+table 'super dim_jurisdiccion'
+	lineageTag: 22c47470-3996-4e8e-a533-8288304737d0
+
+	column jurisdiccion_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: fe4fa46a-66bd-4f88-92b5-4fbdedb70462
+		summarizeBy: none
+		sourceColumn: jurisdiccion_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column nombre
+		dataType: string
+		lineageTag: 9d891637-292a-4833-bd0b-2be7599db4a3
+		summarizeBy: none
+		sourceColumn: nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column provincia
+		dataType: string
+		lineageTag: 4ecb463c-5b07-4446-80a7-b55049e22739
+		summarizeBy: none
+		sourceColumn: provincia
+
+		annotation SummarizationSetBy = Automatic
+
+	column region
+		dataType: string
+		lineageTag: bdb89357-a3f5-4c52-8c03-a36a64ac0d29
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	column es_total
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8e8ab7fd-c351-4b7c-920c-8dcbb6fac088
+		summarizeBy: none
+		sourceColumn: es_total
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'super dim_jurisdiccion' = m
+		mode: import
+		source =
+				let
+				  Origen = PostgreSQL.Database("aws-0-sa-east-1.pooler.supabase.com", "postgres"),
+				  #"Navegación 1" = Origen{[Schema = "super", Item = "dim_jurisdiccion"]}[Data]
+				in
+				  #"Navegación 1"
+
+	annotation PBI_ResultType = Table
+
