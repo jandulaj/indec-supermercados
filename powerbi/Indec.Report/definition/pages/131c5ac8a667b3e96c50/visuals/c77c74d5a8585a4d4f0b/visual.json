@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "c77c74d5a8585a4d4f0b",
   "position": {
-    "x": 434.66666666666669,
-    "y": 169.33333333333334,
-    "z": 8001,
-    "height": 144,
-    "width": 338.66666666666669,
-    "tabOrder": 7001
+    "x": 500.89208633093523,
+    "y": 167.82733812949641,
+    "z": 8000,
+    "height": 163.16546762589928,
+    "width": 433.55395683453241,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -27,8 +27,8 @@
                 }
               },
               "queryRef": "super fact_indices.Distancia al Máximo",
-              "nativeQueryRef": "DISTANCIA AL MAXIMO",
-              "displayName": "DISTANCIA AL MAXIMO"
+              "nativeQueryRef": "DISTANCIA AL MÁXIMO",
+              "displayName": "DISTANCIA AL MÁXIMO"
             }
           ]
         }
@@ -303,5 +303,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "de14287f7aed977c1ec8",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "super fact_indices"
+              }
+            },
+            "Property": "Distancia al Máximo"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

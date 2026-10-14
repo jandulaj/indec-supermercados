@@ -5,12 +5,12 @@
       "ordinal": 0,
       "scrollPosition": {
         "x": 0,
-        "y": 33
+        "y": 75
       },
       "nodes": [
         {
           "location": {
-            "x": 791.88925028785422,
+            "x": 784.88925028785422,
             "y": 0
           },
           "nodeIndex": "super dim_categoria",
@@ -45,7 +45,7 @@
             "height": 244,
             "width": 234
           },
-          "zIndex": 6
+          "zIndex": 5
         },
         {
           "location": {
@@ -68,7 +68,7 @@
           "nodeIndex": "super fact_ventas_canal",
           "nodeLineageTag": "fe9d8581-a617-4fee-884a-757fa879001b",
           "size": {
-            "height": 185,
+            "height": 182,
             "width": 234
           },
           "zIndex": 2
@@ -84,7 +84,7 @@
             "height": 337,
             "width": 282
           },
-          "zIndex": 5
+          "zIndex": 7
         },
         {
           "location": {
@@ -94,10 +94,10 @@
           "nodeIndex": "super fact_ventas_medio_pago",
           "nodeLineageTag": "7d4c8b3b-0a63-4f12-9390-aa8fd98a00c8",
           "size": {
-            "height": 208,
+            "height": 282,
             "width": 234
           },
-          "zIndex": 7
+          "zIndex": 6
         }
       ],
       "name": "Todas las tablas",

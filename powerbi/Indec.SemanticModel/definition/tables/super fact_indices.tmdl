@@ -17,23 +17,6 @@ table 'super fact_indices'
 		formatString: 0.0
 		lineageTag: 85dc2f09-4950-47b9-9239-2360a3f52365
 
-	measure 'Primer Indice' =
-			
-			VAR PrimerPeriodo =
-			    CALCULATE(
-			        MIN('super fact_indices'[periodo]),
-			        REMOVEFILTERS('super dim_periodo')
-			    )
-			RETURN
-			    CALCULATE(
-			        MAX('super fact_indices'[idx_desest]),
-			         REMOVEFILTERS('super dim_periodo'),
-			        'super fact_indices'[periodo] = PrimerPeriodo
-			    )
-		lineageTag: 80b036b5-d7c7-42e7-abb0-e62ef54c3111
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	measure 'Marcas desest' =
 			
 			VAR v      = AVERAGE ( 'super fact_indices'[idx_desest] )

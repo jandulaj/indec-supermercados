@@ -4,10 +4,10 @@
   "position": {
     "x": 980,
     "y": 349.33333333333331,
-    "z": 4000,
+    "z": 2000,
     "height": 694.66666666666663,
     "width": 913.33333333333337,
-    "tabOrder": 0
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "hundredPercentStackedColumnChart",
@@ -516,6 +516,48 @@
               }
             ]
           }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "super fact_ventas_medio_pago"
+                          }
+                        },
+                        "Property": "medio_pago"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Efectivo'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
         }
       ],
       "ribbonBands": [
@@ -540,6 +582,20 @@
               "expr": {
                 "Literal": {
                   "Value": "'Participación por medio de pago'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "18D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -585,5 +641,65 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "66f01427c05031daa4e6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "super dim_periodo"
+              }
+            },
+            "Property": "anio"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ac43fe3ff3090418c0a5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "super fact_ventas_medio_pago"
+              }
+            },
+            "Property": "medio_pago"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1c814adbc75082615a90",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "super fact_ventas_medio_pago"
+              }
+            },
+            "Property": "Ventas medio de pago"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3824b612e52c0dc2c468",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "super fact_ventas_medio_pago"
+              }
+            },
+            "Property": "% medio de pago"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

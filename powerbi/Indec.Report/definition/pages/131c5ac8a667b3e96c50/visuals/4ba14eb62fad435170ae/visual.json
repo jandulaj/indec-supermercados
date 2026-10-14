@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "4ba14eb62fad435170ae",
   "position": {
-    "x": 21.333333333333332,
-    "y": 169.33333333333334,
-    "z": 8000,
-    "height": 144,
-    "width": 338.66666666666669,
+    "x": 21.755395683453237,
+    "y": 167.82733812949641,
+    "z": 7000,
+    "height": 163.16546762589928,
+    "width": 433.55395683453241,
     "tabOrder": 7000
   },
   "visual": {
@@ -27,8 +27,8 @@
                 }
               },
               "queryRef": "super fact_indices.Indice Actual",
-              "nativeQueryRef": "INDICE VOLUMEN ACTUAL",
-              "displayName": "INDICE VOLUMEN ACTUAL"
+              "nativeQueryRef": "ÍNDICE VOLUMEN ACTUAL",
+              "displayName": "ÍNDICE VOLUMEN ACTUAL"
             }
           ]
         }
@@ -307,7 +307,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "5ff03f1b4e9d2048a355",
+        "name": "89d233b81d9d2786f417",
         "field": {
           "Measure": {
             "Expression": {

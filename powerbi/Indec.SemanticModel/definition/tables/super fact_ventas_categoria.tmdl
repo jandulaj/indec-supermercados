@@ -46,6 +46,76 @@ table 'super fact_ventas_categoria'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure '% tipo categoría' =
+			
+			DIVIDE (
+			    [Ventas por categoría],
+			    CALCULATE ( [Ventas por categoría], REMOVEFILTERS ( 'super dim_categoria' ) )
+			)
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		lineageTag: 167446b7-57c4-406a-a6d9-9e0062bc7559
+
+	measure 'Ventas reales por categoría' =
+			
+			SUMX (
+			    VALUES ( 'super dim_periodo'[inicio_mes] ),
+			    DIVIDE (
+			        [Ventas por categoría],
+			        CALCULATE ( MAX ( 'super fact_indices'[idx_precios_impl] ) ) / 100
+			    )
+			)
+		lineageTag: 0d724d20-bb37-4a41-9f9c-37efb6453530
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Cambio pp 2017-2025' =
+			
+			VAR ini = CALCULATE ( [% tipo categoría], 'super dim_periodo'[anio] = 2017 )
+			VAR fin = CALCULATE ( [% tipo categoría], 'super dim_periodo'[anio] = 2025 )
+			RETURN ( fin - ini ) * 100
+		formatString: " +0.0 ""pp"";-0.0 ""pp"""
+		lineageTag: 49ae3236-382c-4bc6-b8b4-f888ebb5661f
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Rubro que más ganó' =
+			
+			VAR _rubros =
+			    ADDCOLUMNS (
+			        CALCULATETABLE (
+			            VALUES ( 'super dim_categoria'[nombre] ),
+			            'super dim_categoria'[es_total] = FALSE ()
+			        ),
+			        "@cambio", [Cambio pp 2017-2025]
+			    )
+			VAR _primero = TOPN ( 1, _rubros, [@cambio], DESC )
+			RETURN
+			    CONCATENATEX (
+			        _primero,
+			        'super dim_categoria'[nombre] & "  " & FORMAT ( [@cambio], "+0.0 ""pp"";-0.0 ""pp""" ),
+			        ", "
+			    )
+		lineageTag: 9e2f1f4a-2ed1-4327-a241-9fb28bfe6cb1
+
+	measure 'Rubro que más perdió' =
+			
+			VAR _rubros =
+			    ADDCOLUMNS (
+			        CALCULATETABLE (
+			            VALUES ( 'super dim_categoria'[nombre] ),
+			            'super dim_categoria'[es_total] = FALSE ()
+			        ),
+			        "@cambio", [Cambio pp 2017-2025]
+			    )
+			VAR _ultimo = TOPN ( 1, _rubros, [@cambio], ASC )
+			RETURN
+			    CONCATENATEX (
+			        _ultimo,
+			        'super dim_categoria'[nombre] & "  " & FORMAT ( [@cambio], "+0.0 ""pp"";-0.0 ""pp""" ),
+			        ", "
+			    )
+		lineageTag: bbd461a8-595d-46d8-adfe-ba6e9c427448
+
 	column periodo
 		dataType: dateTime
 		isHidden

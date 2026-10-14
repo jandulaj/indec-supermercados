@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "2b19140851bb880d4a54",
   "position": {
-    "x": 1285.3333333333333,
-    "y": 169.33333333333334,
-    "z": 8003,
-    "height": 144,
-    "width": 338.66666666666669,
-    "tabOrder": 7003
+    "x": 1459.1654676258993,
+    "y": 167.82733812949641,
+    "z": 10000,
+    "height": 163.16546762589928,
+    "width": 433.55395683453241,
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "super fact_ventas_medio_pago.% efectivo último año",
-              "nativeQueryRef": "% efectivo último año"
+              "nativeQueryRef": "% EFECTIVO ÚLTIMO AÑO",
+              "displayName": "% EFECTIVO ÚLTIMO AÑO"
             }
           ]
         }

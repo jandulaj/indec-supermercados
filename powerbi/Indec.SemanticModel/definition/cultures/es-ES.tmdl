@@ -961,29 +961,13 @@ cultureInfo es-ES
 			          }
 			        },
 			        {
-			          "INDICE VOLUMEN ACTUAL": {
+			          "ÍNDICE VOLUMEN ACTUAL": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
 			              "Agent": "PowerBI.VisualColumnRename"
 			            },
 			            "Weight": 0.9
-			          }
-			        }
-			      ]
-			    },
-			    "super_fact_indice.primer_indice": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "super fact_indices",
-			          "ConceptualProperty": "Primer Indice"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "primer indice": {
-			            "State": "Generated"
 			          }
 			        }
 			      ]
@@ -1840,16 +1824,6 @@ cultureInfo es-ES
 			          "distancia al máximo": {
 			            "State": "Generated"
 			          }
-			        },
-			        {
-			          "DISTANCIA AL MAXIMO": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -1901,6 +1875,145 @@ cultureInfo es-ES
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.599
+			          }
+			        }
+			      ]
+			    },
+			    "super_fact_ventas_categoria.tipo_categoría": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "super fact_ventas_categoria",
+			          "ConceptualProperty": "% tipo categoría"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "% tipo categoría": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "percentage tipo categoría": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "pct tipo categoría": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "super_fact_ventas_categoria.ventas_reales_por_categoría": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "super fact_ventas_categoria",
+			          "ConceptualProperty": "Ventas reales por categoría"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ventas reales por categoría": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "super_dim_categoria.tipo_orden": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "super dim_categoria",
+			          "ConceptualProperty": "tipo_orden"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tipo orden": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "tipo_orden": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "super_fact_ventas_categoria.cambio_pp_20172025": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "super fact_ventas_categoria",
+			          "ConceptualProperty": "Cambio pp 2017-2025"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "cambio pp 2017-2025": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "cambio pp 2017 2025": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "super_fact_ventas_categoria.rubro_que_más_ganó": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "super fact_ventas_categoria",
+			          "ConceptualProperty": "Rubro que más ganó"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "rubro que más ganó": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "super_fact_ventas_categoria.rubro_que_más_perdió": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "super fact_ventas_categoria",
+			          "ConceptualProperty": "Rubro que más perdió"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "rubro que más perdió": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "RUBRO QUE MAS PERDIÓ": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -2134,6 +2247,270 @@ cultureInfo es-ES
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "super_dim_periodos_have_super_fact_indices"
+			        }
+			      ]
+			    },
+			    "super_fact_ventas_categoria_has_rubro_que_más_perdió": {
+			      "Binding": {
+			        "ConceptualEntity": "super fact_ventas_categoria"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "super_fact_ventas_categoria": {
+			          "Target": {
+			            "Entity": "super_fact_ventas_categoria"
+			          }
+			        },
+			        "super_fact_ventas_categoria.rubro_que_más_perdió": {
+			          "Target": {
+			            "Entity": "super_fact_ventas_categoria.rubro_que_más_perdió"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "super_fact_ventas_categoria"
+			            },
+			            "Object": {
+			              "Role": "super_fact_ventas_categoria.rubro_que_más_perdió"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "super_fact_ventas_categorias_have_rubro_que_más_perdió"
+			        }
+			      ]
+			    },
+			    "super_fact_ventas_categoria_has_rubro_que_más_ganó": {
+			      "Binding": {
+			        "ConceptualEntity": "super fact_ventas_categoria"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "super_fact_ventas_categoria": {
+			          "Target": {
+			            "Entity": "super_fact_ventas_categoria"
+			          }
+			        },
+			        "super_fact_ventas_categoria.rubro_que_más_ganó": {
+			          "Target": {
+			            "Entity": "super_fact_ventas_categoria.rubro_que_más_ganó"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "super_fact_ventas_categoria"
+			            },
+			            "Object": {
+			              "Role": "super_fact_ventas_categoria.rubro_que_más_ganó"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "super_fact_ventas_categorias_have_rubro_que_más_ganó"
+			        }
+			      ]
+			    },
+			    "super_fact_ventas_categoria_has_cambio_pp_20172025": {
+			      "Binding": {
+			        "ConceptualEntity": "super fact_ventas_categoria"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "super_fact_ventas_categoria": {
+			          "Target": {
+			            "Entity": "super_fact_ventas_categoria"
+			          }
+			        },
+			        "super_fact_ventas_categoria.cambio_pp_20172025": {
+			          "Target": {
+			            "Entity": "super_fact_ventas_categoria.cambio_pp_20172025"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "super_fact_ventas_categoria"
+			            },
+			            "Object": {
+			              "Role": "super_fact_ventas_categoria.cambio_pp_20172025"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "super_fact_ventas_categorias_have_cambio_pp_20172025"
+			        }
+			      ]
+			    },
+			    "super_dim_categoria_has_tipo_orden": {
+			      "Binding": {
+			        "ConceptualEntity": "super dim_categoria"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "super_dim_categoria": {
+			          "Target": {
+			            "Entity": "super_dim_categoria"
+			          }
+			        },
+			        "super_dim_categoria.tipo_orden": {
+			          "Target": {
+			            "Entity": "super_dim_categoria.tipo_orden"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "super_dim_categoria"
+			            },
+			            "Object": {
+			              "Role": "super_dim_categoria.tipo_orden"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "super_dim_categorias_have_tipo_ordens"
+			        }
+			      ]
+			    },
+			    "super_fact_ventas_categoria_has_ventas_reales_por_categoría": {
+			      "Binding": {
+			        "ConceptualEntity": "super fact_ventas_categoria"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "super_fact_ventas_categoria": {
+			          "Target": {
+			            "Entity": "super_fact_ventas_categoria"
+			          }
+			        },
+			        "super_fact_ventas_categoria.ventas_reales_por_categoría": {
+			          "Target": {
+			            "Entity": "super_fact_ventas_categoria.ventas_reales_por_categoría"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "super_fact_ventas_categoria"
+			            },
+			            "Object": {
+			              "Role": "super_fact_ventas_categoria.ventas_reales_por_categoría"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "super_fact_ventas_categorias_have_ventas_reales_por_categoría"
+			        }
+			      ]
+			    },
+			    "super_fact_indice_has_super_fact_ventas_categoria_ventas_reales_por_categoría": {
+			      "Binding": {
+			        "ConceptualEntity": "super fact_indices"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "super_fact_indice": {
+			          "Target": {
+			            "Entity": "super_fact_indice"
+			          }
+			        },
+			        "super_fact_ventas_categoria.ventas_reales_por_categoría": {
+			          "Target": {
+			            "Entity": "super_fact_ventas_categoria.ventas_reales_por_categoría"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "super_fact_indice"
+			            },
+			            "Object": {
+			              "Role": "super_fact_ventas_categoria.ventas_reales_por_categoría"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "super_fact_indices_have_ventas_reales_por_categoría"
+			        }
+			      ]
+			    },
+			    "super_dim_periodo_has_super_fact_ventas_categoria_ventas_reales_por_categoría": {
+			      "Binding": {
+			        "ConceptualEntity": "super dim_periodo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "super_dim_periodo": {
+			          "Target": {
+			            "Entity": "super_dim_periodo"
+			          }
+			        },
+			        "super_fact_ventas_categoria.ventas_reales_por_categoría": {
+			          "Target": {
+			            "Entity": "super_fact_ventas_categoria.ventas_reales_por_categoría"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "super_dim_periodo"
+			            },
+			            "Object": {
+			              "Role": "super_fact_ventas_categoria.ventas_reales_por_categoría"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "super_dim_periodos_have_ventas_reales_por_categoría"
+			        }
+			      ]
+			    },
+			    "super_fact_ventas_categoria_has_tipo_categoría": {
+			      "Binding": {
+			        "ConceptualEntity": "super fact_ventas_categoria"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "super_fact_ventas_categoria": {
+			          "Target": {
+			            "Entity": "super_fact_ventas_categoria"
+			          }
+			        },
+			        "super_fact_ventas_categoria.tipo_categoría": {
+			          "Target": {
+			            "Entity": "super_fact_ventas_categoria.tipo_categoría"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "super_fact_ventas_categoria"
+			            },
+			            "Object": {
+			              "Role": "super_fact_ventas_categoria.tipo_categoría"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "super_fact_ventas_categorias_have__tipo_categoría"
 			        }
 			      ]
 			    },
@@ -2992,39 +3369,6 @@ cultureInfo es-ES
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "super_fact_indices_have_marcas_desest"
-			        }
-			      ]
-			    },
-			    "super_fact_indice_has_primer_indice": {
-			      "Binding": {
-			        "ConceptualEntity": "super fact_indices"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "super_fact_indice": {
-			          "Target": {
-			            "Entity": "super_fact_indice"
-			          }
-			        },
-			        "super_fact_indice.primer_indice": {
-			          "Target": {
-			            "Entity": "super_fact_indice.primer_indice"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "super_fact_indice"
-			            },
-			            "Object": {
-			              "Role": "super_fact_indice.primer_indice"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "super_fact_indices_have_primer_indice"
 			        }
 			      ]
 			    },

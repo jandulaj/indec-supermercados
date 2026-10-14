@@ -1,0 +1,33 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "e023bef833f345459b46",
+  "position": {
+    "x": 434.66666666666669,
+    "y": 998.66666666666663,
+    "z": 3000,
+    "height": 66.666666666666671,
+    "width": 526.66666666666663,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Discrecional: electrónicos, hogar e indumentaria. % del gasto nominal. 2026: ene–jul."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -26,6 +26,9 @@ table 'super dim_categoria'
 		lineageTag: 31713c0f-4a80-4d8e-959a-5770b488fcd6
 		summarizeBy: none
 		sourceColumn: tipo
+		sortByColumn: tipo_orden
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
@@ -38,14 +41,24 @@ table 'super dim_categoria'
 
 		annotation SummarizationSetBy = Automatic
 
+	column tipo_orden
+		dataType: string
+		lineageTag: ee0811b1-6be7-415c-b774-62e4d002a906
+		summarizeBy: none
+		sourceColumn: tipo_orden
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'super dim_categoria' = m
 		mode: import
 		source =
 				let
 				  Origen = PostgreSQL.Database("aws-0-sa-east-1.pooler.supabase.com", "postgres"),
-				  #"Navegación 1" = Origen{[Schema = "super", Item = "dim_categoria"]}[Data]
+				  #"Navegación 1" = Origen{[Schema = "super", Item = "dim_categoria"]}[Data],
+				    #"Columna condicional agregada" = Table.AddColumn(#"Navegación 1", "Personalizado", each if [tipo] = "Discrecional" then 1 else if [tipo] = "Básico" then 2 else if [tipo] = "Otros" then 3 else 4),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Columna condicional agregada",{{"Personalizado", "tipo_orden"}})
 				in
-				  #"Navegación 1"
+				  #"Columnas con nombre cambiado"
 
 	annotation PBI_ResultType = Table
 
