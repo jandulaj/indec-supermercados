@@ -303,23 +303,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "89d233b81d9d2786f417",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "super fact_indices"
-              }
-            },
-            "Property": "Indice Actual"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

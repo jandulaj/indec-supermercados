@@ -59,7 +59,15 @@ SELECT ROW_NUMBER() OVER (ORDER BY (nombre <> 'Total'), nombre)::smallint AS cat
             WHEN nombre = 'Otros' THEN 'Otros'
             ELSE 'Básico'
        END                                                          AS tipo,
-       nombre = 'Total'                                             AS es_total
+       nombre = 'Total'                                             AS es_total,
+       CASE nombre
+            WHEN 'Alimentos preparados y rotisería'               THEN 'Rotisería'
+            WHEN 'Artículos de limpieza y perfumería'             THEN 'Limpieza y perfumería'
+            WHEN 'Electrónicos y artículos para el hogar'         THEN 'Electrónicos y hogar'
+            WHEN 'Indumentaria, calzado y textiles para el hogar' THEN 'Indumentaria'
+            WHEN 'Verdulería y frutería'                          THEN 'Verdulería'
+            ELSE nombre
+       END                                                          AS nombre_corto
 FROM (SELECT DISTINCT categoria AS nombre FROM stg.ventas_categoria_jurisdiccion) c;
 ALTER TABLE super.dim_categoria ADD PRIMARY KEY (categoria_id);
 

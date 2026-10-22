@@ -1,0 +1,15 @@
+DEFINE
+	VAR primer_anio = CALCULATE(YEAR(MIN('super fact_indices'[periodo])), REMOVEFILTERS('super dim_periodo'))
+	VAR ultimo_anio = CALCULATE(YEAR(MAX('super fact_indices'[periodo])), REMOVEFILTERS('super dim_periodo'), MONTH('super fact_indices'[periodo])=12)
+	VAR volumenes =
+    ADDCOLUMNS (
+        FILTER(
+			ALL ('super dim_periodo'[anio] ), ('super dim_periodo'[anio] > primer_anio) &&  ('super dim_periodo'[anio] <= ultimo_anio)),	
+        	"@volumen", 
+				[Volumen], 
+			"@volumen_aa", 
+				Var _anio = 'super dim_periodo'[anio]-1
+				RETURN CALCULATE([Volumen], 'super dim_periodo'[anio] = _anio))
+
+EVALUATE
+	SELECTCOLUMNS(TOPN (1, ADDCOLUMNS(volumenes, "@variacion", DIVIDE([@volumen],[@volumen_aa])-1), [@variacion], ASC), 'super dim_periodo'[anio], [@variacion])

@@ -68,6 +68,95 @@ table 'super fact_indices'
 		formatString: 0.0\ %;-0.0\ %;0.0\ %
 		lineageTag: 912b7518-46ce-4256-a753-acc0ac53b5c3
 
+	measure Nominal = AVERAGE('super fact_indices'[idx_corriente])
+		lineageTag: 3828d508-a95b-4937-b3d2-1ed812aaf452
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Volumen = AVERAGE('super fact_indices'[idx_original])
+		lineageTag: 46eb8ce0-5f2a-481b-9ee8-43d1a4ff7ee8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Precio = AVERAGE('super fact_indices'[idx_precios_impl])
+		lineageTag: d6487098-58ad-4b7e-b17a-b7dc188e0ae2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Var volumen 1er-último año completo' =
+			
+			VAR primer_anio = CALCULATE(YEAR(MIN('super fact_indices'[periodo])), REMOVEFILTERS('super dim_periodo'))
+			VAR ultimo_anio = CALCULATE(YEAR(MAX('super fact_indices'[periodo])), REMOVEFILTERS('super dim_periodo'), MONTH('super fact_indices'[periodo])=12)
+			
+			VAR primer_indice = CALCULATE([Volumen], 'super dim_periodo'[anio]=primer_anio, REMOVEFILTERS('super dim_periodo'))
+			VAR ultimo_indice = CALCULATE([Volumen], 'super dim_periodo'[anio]=ultimo_anio, REMOVEFILTERS('super dim_periodo'))
+			RETURN
+			    DIVIDE(ultimo_indice, primer_indice) -1
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: f182f49e-8289-4c6f-b359-8beea85c1138
+
+	measure 'Var precio 1er-último año completo' =
+			
+			VAR primer_anio = CALCULATE(YEAR(MIN('super fact_indices'[periodo])), REMOVEFILTERS('super dim_periodo'))
+			VAR ultimo_periodo = CALCULATE(MAX('super fact_indices'[periodo]), REMOVEFILTERS('super dim_periodo'))
+			VAR ultimo_anio = IF (MONTH(ultimo_periodo) = 12, YEAR(ultimo_periodo), YEAR(ultimo_periodo)-1)
+			
+			VAR primer_indice = CALCULATE([Precio], 'super dim_periodo'[anio]=primer_anio, REMOVEFILTERS('super dim_periodo'))
+			VAR ultimo_indice = CALCULATE([Precio], 'super dim_periodo'[anio]=ultimo_anio, REMOVEFILTERS('super dim_periodo'))
+			RETURN
+			    DIVIDE(ultimo_indice, primer_indice)
+		formatString: "   ""×""0.0"
+		lineageTag: 4d6acfc1-21b5-4b2a-878d-31b080950a59
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Var nominal 1er-último año completo' =
+			
+			VAR meses_por_anio =
+			    ADDCOLUMNS (
+			        ALL ( 'super dim_periodo'[anio] ),                      -- una fila por año, sin filtros del visual
+			        "@meses",
+			            VAR a = 'super dim_periodo'[anio]                   -- el año de la fila actual
+			            RETURN
+			                COUNTROWS (
+			                    FILTER (
+			                        ALL ( 'super fact_indices'[periodo] ),  -- todos los meses con dato
+			                        YEAR ( 'super fact_indices'[periodo] ) = a
+			                    )
+			                )
+			    )
+			VAR ultimo_anio =
+			    MAXX ( FILTER ( meses_por_anio, [@meses] = 12 ), 'super dim_periodo'[anio] )
+			VAR primer_anio = CALCULATE(YEAR(MIN('super fact_indices'[periodo])), REMOVEFILTERS('super dim_periodo'))
+			VAR primer_indice = CALCULATE([Nominal], 'super dim_periodo'[anio]=primer_anio, REMOVEFILTERS('super dim_periodo'))
+			VAR ultimo_indice = CALCULATE([Nominal], 'super dim_periodo'[anio]=ultimo_anio, REMOVEFILTERS('super dim_periodo'))
+			RETURN
+			    DIVIDE(ultimo_indice, primer_indice)
+		formatString: "   ""×""0.0"
+		lineageTag: 5ec5a944-c65c-4ab0-9525-eef90a02dfd5
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure peor_anio = ```
+			
+			VAR primer_anio = CALCULATE(YEAR(MIN('super fact_indices'[periodo])), REMOVEFILTERS('super dim_periodo'))
+			VAR ultimo_anio = CALCULATE(YEAR(MAX('super fact_indices'[periodo])), REMOVEFILTERS('super dim_periodo'), MONTH('super fact_indices'[periodo])=12)
+			VAR volumenes =
+			    ADDCOLUMNS (
+			        FILTER(
+						ALL ('super dim_periodo'[anio] ), ('super dim_periodo'[anio] > primer_anio) &&  ('super dim_periodo'[anio] <= ultimo_anio)),	
+			        	"@volumen", 
+							[Volumen], 
+						"@volumen_aa", 
+							Var _anio = 'super dim_periodo'[anio]-1
+							RETURN CALCULATE([Volumen], 'super dim_periodo'[anio] = _anio))
+			VAR peor =
+			    TOPN ( 1, ADDCOLUMNS ( volumenes, "@variacion", DIVIDE ( [@volumen], [@volumen_aa] ) - 1 ), [@variacion], ASC )
+			RETURN
+			    CONCATENATEX ( peor, 'super dim_periodo'[anio] & " " & FORMAT ( [@variacion], "0.0%" ) )
+			```
+		lineageTag: 3ff7f8f1-a35b-48a7-b5b2-eb28aced1378
+
 	column periodo
 		dataType: dateTime
 		isHidden

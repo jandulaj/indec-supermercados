@@ -27,8 +27,8 @@
                 }
               },
               "queryRef": "super fact_ventas_categoria.Rubro que más perdió",
-              "nativeQueryRef": "RUBRO QUE MAS PERDIÓ",
-              "displayName": "RUBRO QUE MAS PERDIÓ"
+              "nativeQueryRef": "RUBRO QUE MÁS PERDIÓ",
+              "displayName": "RUBRO QUE MÁS PERDIÓ"
             }
           ]
         }
@@ -74,7 +74,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "32D"
+                  "Value": "24D"
                 }
               }
             },
@@ -83,7 +83,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#0B2545'"
+                      "Value": "'#D35F1E'"
                     }
                   }
                 }
@@ -288,23 +288,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "4080a5082b4282e04665",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "super fact_ventas_categoria"
-              }
-            },
-            "Property": "Rubro que más perdió"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

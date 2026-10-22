@@ -303,23 +303,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "de14287f7aed977c1ec8",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "super fact_indices"
-              }
-            },
-            "Property": "Distancia al Máximo"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

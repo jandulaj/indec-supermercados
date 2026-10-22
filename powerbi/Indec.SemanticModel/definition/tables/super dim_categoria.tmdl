@@ -49,6 +49,14 @@ table 'super dim_categoria'
 
 		annotation SummarizationSetBy = Automatic
 
+	column nombre_corto
+		dataType: string
+		lineageTag: 1f185a1a-bf62-4e60-8fbc-9bda0ab8a4d3
+		summarizeBy: none
+		sourceColumn: nombre_corto
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'super dim_categoria' = m
 		mode: import
 		source =

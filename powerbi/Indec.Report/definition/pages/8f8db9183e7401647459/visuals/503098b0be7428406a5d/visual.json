@@ -74,7 +74,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "32D"
+                  "Value": "24D"
                 }
               }
             },
@@ -288,23 +288,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "8da40a607a528037f3b4",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "super fact_ventas_categoria"
-              }
-            },
-            "Property": "Rubro que más ganó"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

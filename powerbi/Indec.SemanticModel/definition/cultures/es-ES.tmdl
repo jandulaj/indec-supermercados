@@ -1912,6 +1912,16 @@ cultureInfo es-ES
 			            },
 			            "Weight": 0.591
 			          }
+			        },
+			        {
+			          "PESO DE LO DISCRECIONAL (2026)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -1954,24 +1964,28 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_categoria.cambio_pp_20172025": {
+			    "super_fact_ventas_categoria.cambio_pp": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "super fact_ventas_categoria",
-			          "ConceptualProperty": "Cambio pp 2017-2025"
+			          "ConceptualProperty": "Cambio pp"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "cambio pp 2017-2025": {
+			          "cambio pp": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "cambio pp 2017 2025": {
-			            "State": "Generated",
-			            "Weight": 0.97
+			          "DISCRECIONAL VS. 2017": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -2005,9 +2019,199 @@ cultureInfo es-ES
 			          "rubro que más perdió": {
 			            "State": "Generated"
 			          }
+			        }
+			      ]
+			    },
+			    "super_dim_categoria.nombre_corto": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "super dim_categoria",
+			          "ConceptualProperty": "nombre_corto"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nombre corto": {
+			            "State": "Generated"
+			          }
 			        },
 			        {
-			          "RUBRO QUE MAS PERDIÓ": {
+			          "nombre_corto": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "super_fact_indice.nominal": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "super fact_indices",
+			          "ConceptualProperty": "Nominal"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nominal": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "super_fact_indice.volumen": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "super fact_indices",
+			          "ConceptualProperty": "Volumen"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "volumen": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "super_fact_indice.precio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "super fact_indices",
+			          "ConceptualProperty": "Precio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "precio": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "super_fact_indice.var_volumen_1erúltimo_año_completo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "super fact_indices",
+			          "ConceptualProperty": "Var volumen 1er-último año completo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "var volumen 1er-último año completo": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "var volumen 1er último año completo": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "VOLUMEN 2017→2025": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "super_fact_indice.var_precio_1erúltimo_año_completo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "super fact_indices",
+			          "ConceptualProperty": "Var precio 1er-último año completo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "var precio 1er-último año completo": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "var precio 1er último año completo": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "PRECIOS 2017→2025": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "super_fact_indice.var_nominal_1erúltimo_año_completo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "super fact_indices",
+			          "ConceptualProperty": "Var nominal 1er-último año completo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "var nominal 1er-último año completo": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "var nominal 1er último año completo": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "VENTAS EN PESOS 2017→2025": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "super_fact_indice.peor_anio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "super fact_indices",
+			          "ConceptualProperty": "peor_anio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "peor anio": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "peor_anio": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "PEOR AÑO (2017–2025)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -2250,6 +2454,290 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
+			    "super_fact_indice_has_peor_anio": {
+			      "Binding": {
+			        "ConceptualEntity": "super fact_indices"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "super_fact_indice": {
+			          "Target": {
+			            "Entity": "super_fact_indice"
+			          }
+			        },
+			        "super_fact_indice.peor_anio": {
+			          "Target": {
+			            "Entity": "super_fact_indice.peor_anio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "super_fact_indice"
+			            },
+			            "Object": {
+			              "Role": "super_fact_indice.peor_anio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "super_fact_indices_have_peor_anio"
+			        }
+			      ]
+			    },
+			    "super_fact_indice_has_var_nominal_1erúltimo_año_completo": {
+			      "Binding": {
+			        "ConceptualEntity": "super fact_indices"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "super_fact_indice": {
+			          "Target": {
+			            "Entity": "super_fact_indice"
+			          }
+			        },
+			        "super_fact_indice.var_nominal_1erúltimo_año_completo": {
+			          "Target": {
+			            "Entity": "super_fact_indice.var_nominal_1erúltimo_año_completo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "super_fact_indice"
+			            },
+			            "Object": {
+			              "Role": "super_fact_indice.var_nominal_1erúltimo_año_completo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "super_fact_indices_have_var_nominal_1erúltimo_año_completo"
+			        }
+			      ]
+			    },
+			    "super_fact_indice_has_var_precio_1erúltimo_año_completo": {
+			      "Binding": {
+			        "ConceptualEntity": "super fact_indices"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "super_fact_indice": {
+			          "Target": {
+			            "Entity": "super_fact_indice"
+			          }
+			        },
+			        "super_fact_indice.var_precio_1erúltimo_año_completo": {
+			          "Target": {
+			            "Entity": "super_fact_indice.var_precio_1erúltimo_año_completo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "super_fact_indice"
+			            },
+			            "Object": {
+			              "Role": "super_fact_indice.var_precio_1erúltimo_año_completo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "super_fact_indices_have_var_precio_1erúltimo_año_completo"
+			        }
+			      ]
+			    },
+			    "super_fact_indice_has_var_volumen_1erúltimo_año_completo": {
+			      "Binding": {
+			        "ConceptualEntity": "super fact_indices"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "super_fact_indice": {
+			          "Target": {
+			            "Entity": "super_fact_indice"
+			          }
+			        },
+			        "super_fact_indice.var_volumen_1erúltimo_año_completo": {
+			          "Target": {
+			            "Entity": "super_fact_indice.var_volumen_1erúltimo_año_completo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "super_fact_indice"
+			            },
+			            "Object": {
+			              "Role": "super_fact_indice.var_volumen_1erúltimo_año_completo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "super_fact_indices_have_var_volumen_1erúltimo_año_completo"
+			        }
+			      ]
+			    },
+			    "super_fact_indice_has_precio": {
+			      "Binding": {
+			        "ConceptualEntity": "super fact_indices"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "super_fact_indice": {
+			          "Target": {
+			            "Entity": "super_fact_indice"
+			          }
+			        },
+			        "super_fact_indice.precio": {
+			          "Target": {
+			            "Entity": "super_fact_indice.precio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "super_fact_indice"
+			            },
+			            "Object": {
+			              "Role": "super_fact_indice.precio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "super_fact_indices_have_precio"
+			        }
+			      ]
+			    },
+			    "super_fact_indice_has_volumen": {
+			      "Binding": {
+			        "ConceptualEntity": "super fact_indices"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "super_fact_indice": {
+			          "Target": {
+			            "Entity": "super_fact_indice"
+			          }
+			        },
+			        "super_fact_indice.volumen": {
+			          "Target": {
+			            "Entity": "super_fact_indice.volumen"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "super_fact_indice"
+			            },
+			            "Object": {
+			              "Role": "super_fact_indice.volumen"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "super_fact_indices_have_volumen"
+			        }
+			      ]
+			    },
+			    "super_fact_indice_has_nominal": {
+			      "Binding": {
+			        "ConceptualEntity": "super fact_indices"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "super_fact_indice": {
+			          "Target": {
+			            "Entity": "super_fact_indice"
+			          }
+			        },
+			        "super_fact_indice.nominal": {
+			          "Target": {
+			            "Entity": "super_fact_indice.nominal"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "super_fact_indice"
+			            },
+			            "Object": {
+			              "Role": "super_fact_indice.nominal"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "super_fact_indices_have_nominal"
+			        },
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "super_fact_indice"
+			            },
+			            "Adjectives": [
+			              {
+			                "nominal": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "super_fact_indice.nominal"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "nominal_indicates_how_nominal_super_fact_indices_are"
+			        }
+			      ]
+			    },
+			    "super_dim_categoria_has_nombre_corto": {
+			      "Binding": {
+			        "ConceptualEntity": "super dim_categoria"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "super_dim_categoria": {
+			          "Target": {
+			            "Entity": "super_dim_categoria"
+			          }
+			        },
+			        "super_dim_categoria.nombre_corto": {
+			          "Target": {
+			            "Entity": "super_dim_categoria.nombre_corto"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "super_dim_categoria"
+			            },
+			            "Object": {
+			              "Role": "super_dim_categoria.nombre_corto"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "super_dim_categorias_have_nombre_cortos"
+			        }
+			      ]
+			    },
 			    "super_fact_ventas_categoria_has_rubro_que_más_perdió": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_ventas_categoria"
@@ -2316,7 +2804,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_categoria_has_cambio_pp_20172025": {
+			    "super_fact_ventas_categoria_has_cambio_pp": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_ventas_categoria"
 			      },
@@ -2327,9 +2815,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_ventas_categoria"
 			          }
 			        },
-			        "super_fact_ventas_categoria.cambio_pp_20172025": {
+			        "super_fact_ventas_categoria.cambio_pp": {
 			          "Target": {
-			            "Entity": "super_fact_ventas_categoria.cambio_pp_20172025"
+			            "Entity": "super_fact_ventas_categoria.cambio_pp"
 			          }
 			        }
 			      },
@@ -2340,12 +2828,12 @@ cultureInfo es-ES
 			              "Role": "super_fact_ventas_categoria"
 			            },
 			            "Object": {
-			              "Role": "super_fact_ventas_categoria.cambio_pp_20172025"
+			              "Role": "super_fact_ventas_categoria.cambio_pp"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "super_fact_ventas_categorias_have_cambio_pp_20172025"
+			          "ID": "super_fact_ventas_categorias_have_cambio_pp"
 			        }
 			      ]
 			    },

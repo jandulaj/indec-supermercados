@@ -68,12 +68,15 @@ table 'super fact_ventas_categoria'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Cambio pp 2017-2025' =
+	measure 'Cambio pp' = ```
 			
-			VAR ini = CALCULATE ( [% tipo categoría], 'super dim_periodo'[anio] = 2017 )
-			VAR fin = CALCULATE ( [% tipo categoría], 'super dim_periodo'[anio] = 2025 )
-			RETURN ( fin - ini ) * 100
-		formatString: " +0.0 ""pp"";-0.0 ""pp"""
+			   VAR _anioIni = MIN ( 'super dim_periodo'[anio] )
+			   VAR _anioFin = MIN ( MAX ( 'super dim_periodo'[anio] ), 2025 )   -- 2026 está incompleto
+			   VAR _ini = CALCULATE ( [% tipo categoría], 'super dim_periodo'[anio] = _anioIni )
+			   VAR _fin = CALCULATE ( [% tipo categoría], 'super dim_periodo'[anio] = _anioFin )
+			   RETURN ROUND(( _fin - _ini ) * 100, 1)
+			```
+		formatString: +0.0 "pp";-0.0 "pp"
 		lineageTag: 49ae3236-382c-4bc6-b8b4-f888ebb5661f
 
 		annotation PBI_FormatHint = {"isCustom":true}
@@ -83,16 +86,16 @@ table 'super fact_ventas_categoria'
 			VAR _rubros =
 			    ADDCOLUMNS (
 			        CALCULATETABLE (
-			            VALUES ( 'super dim_categoria'[nombre] ),
+			            VALUES ( 'super dim_categoria'[nombre_corto] ),
 			            'super dim_categoria'[es_total] = FALSE ()
 			        ),
-			        "@cambio", [Cambio pp 2017-2025]
+			        "@cambio", [Cambio pp]
 			    )
 			VAR _primero = TOPN ( 1, _rubros, [@cambio], DESC )
 			RETURN
 			    CONCATENATEX (
 			        _primero,
-			        'super dim_categoria'[nombre] & "  " & FORMAT ( [@cambio], "+0.0 ""pp"";-0.0 ""pp""" ),
+			        'super dim_categoria'[nombre_corto] & "  " & FORMAT ( [@cambio], "+0.0 ""pp"";-0.0 ""pp""" ),
 			        ", "
 			    )
 		lineageTag: 9e2f1f4a-2ed1-4327-a241-9fb28bfe6cb1
@@ -102,16 +105,16 @@ table 'super fact_ventas_categoria'
 			VAR _rubros =
 			    ADDCOLUMNS (
 			        CALCULATETABLE (
-			            VALUES ( 'super dim_categoria'[nombre] ),
+			            VALUES ( 'super dim_categoria'[nombre_corto] ),
 			            'super dim_categoria'[es_total] = FALSE ()
 			        ),
-			        "@cambio", [Cambio pp 2017-2025]
+			        "@cambio", [Cambio pp]
 			    )
 			VAR _ultimo = TOPN ( 1, _rubros, [@cambio], ASC )
 			RETURN
 			    CONCATENATEX (
 			        _ultimo,
-			        'super dim_categoria'[nombre] & "  " & FORMAT ( [@cambio], "+0.0 ""pp"";-0.0 ""pp""" ),
+			        'super dim_categoria'[nombre_corto] & "  " & FORMAT ( [@cambio], "+0.0 ""pp"";-0.0 ""pp""" ),
 			        ", "
 			    )
 		lineageTag: bbd461a8-595d-46d8-adfe-ba6e9c427448

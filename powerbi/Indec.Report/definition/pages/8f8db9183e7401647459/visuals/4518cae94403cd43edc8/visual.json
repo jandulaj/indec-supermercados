@@ -27,8 +27,8 @@
                 }
               },
               "queryRef": "super fact_ventas_categoria.% tipo categoría",
-              "nativeQueryRef": "% TIPO CATEGORÍA",
-              "displayName": "% TIPO CATEGORÍA"
+              "nativeQueryRef": "PESO DE LO DISCRECIONAL (2026)",
+              "displayName": "PESO DE LO DISCRECIONAL (2026)"
             }
           ]
         }
@@ -306,20 +306,6 @@
   },
   "filterConfig": {
     "filters": [
-      {
-        "name": "48ea547c349b4e1c2ad2",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "super fact_ventas_categoria"
-              }
-            },
-            "Property": "% tipo categoría"
-          }
-        },
-        "type": "Advanced"
-      },
       {
         "name": "fa509536264d7ff5c81e",
         "field": {

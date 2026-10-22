@@ -94,6 +94,13 @@
                   "Value": "true"
                 }
               }
+            },
+            "labelPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Auto'"
+                }
+              }
             }
           }
         }
@@ -161,6 +168,19 @@
             }
           }
         }
+      ],
+      "categoryAxis": [
+        {
+          "properties": {
+            "axisType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Categorical'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -218,10 +238,18 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#DDE3EA'"
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.3
                     }
                   }
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
                 }
               }
             }
@@ -292,34 +320,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "f7ba8111b48fecb657c2",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "super dim_periodo"
-              }
-            },
-            "Property": "anio"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "c5c4323e8bb8c588b7c6",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "super fact_ventas_categoria"
-              }
-            },
-            "Property": "% tipo categoría"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

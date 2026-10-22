@@ -23,11 +23,11 @@
                       "Entity": "super dim_categoria"
                     }
                   },
-                  "Property": "nombre"
+                  "Property": "nombre_corto"
                 }
               },
-              "queryRef": "super dim_categoria.nombre",
-              "nativeQueryRef": "nombre",
+              "queryRef": "super dim_categoria.nombre_corto",
+              "nativeQueryRef": "nombre_corto",
               "active": true
             }
           ]
@@ -42,11 +42,11 @@
                       "Entity": "super fact_ventas_categoria"
                     }
                   },
-                  "Property": "Cambio pp 2017-2025"
+                  "Property": "Cambio pp"
                 }
               },
               "queryRef": "super fact_ventas_categoria.Cambio pp 2017-2025",
-              "nativeQueryRef": "Cambio pp 2017-2025"
+              "nativeQueryRef": "Cambio pp"
             }
           ]
         }
@@ -61,7 +61,7 @@
                     "Entity": "super fact_ventas_categoria"
                   }
                 },
-                "Property": "Cambio pp 2017-2025"
+                "Property": "Cambio pp"
               }
             },
             "direction": "Descending"
@@ -460,7 +460,7 @@
                                       "Entity": "super fact_ventas_categoria"
                                     }
                                   },
-                                  "Property": "Cambio pp 2017-2025"
+                                  "Property": "Cambio pp"
                                 }
                               },
                               "Right": {
@@ -487,7 +487,7 @@
                                       "Entity": "super fact_ventas_categoria"
                                     }
                                   },
-                                  "Property": "Cambio pp 2017-2025"
+                                  "Property": "Cambio pp"
                                 }
                               },
                               "Right": {
@@ -577,10 +577,18 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#DDE3EA'"
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.3
                     }
                   }
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
                 }
               }
             }
@@ -589,37 +597,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "0ed73005198980aba417",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "super dim_categoria"
-              }
-            },
-            "Property": "nombre"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "6eb42fa536b31250baa0",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "super fact_ventas_categoria"
-              }
-            },
-            "Property": "Cambio pp 2017-2025"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

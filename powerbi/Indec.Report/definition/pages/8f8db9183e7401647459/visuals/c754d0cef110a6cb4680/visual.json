@@ -23,11 +23,12 @@
                       "Entity": "super fact_ventas_categoria"
                     }
                   },
-                  "Property": "Cambio pp 2017-2025"
+                  "Property": "Cambio pp"
                 }
               },
               "queryRef": "super fact_ventas_categoria.Cambio pp 2017-2025",
-              "nativeQueryRef": "Cambio pp 2017-2025"
+              "nativeQueryRef": "DISCRECIONAL VS. 2017",
+              "displayName": "DISCRECIONAL VS. 2017"
             }
           ]
         }
@@ -42,7 +43,7 @@
                     "Entity": "super fact_ventas_categoria"
                   }
                 },
-                "Property": "Cambio pp 2017-2025"
+                "Property": "Cambio pp"
               }
             },
             "direction": "Descending"
@@ -305,20 +306,6 @@
   },
   "filterConfig": {
     "filters": [
-      {
-        "name": "388b3d854b16c24c7c4e",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "super fact_ventas_categoria"
-              }
-            },
-            "Property": "Cambio pp 2017-2025"
-          }
-        },
-        "type": "Advanced"
-      },
       {
         "name": "1772c8b922f065a41f1e",
         "field": {
