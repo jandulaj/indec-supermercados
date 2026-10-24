@@ -20,7 +20,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "super fact_indices"
+                      "Entity": "_Medidas"
                     }
                   },
                   "Property": "Var nominal 1er-último año completo"
@@ -40,7 +40,7 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "super fact_indices"
+                    "Entity": "_Medidas"
                   }
                 },
                 "Property": "Var nominal 1er-último año completo"
@@ -274,7 +274,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Ultima'"
+                  "Value": "'KPIVentas'"
                 }
               }
             },

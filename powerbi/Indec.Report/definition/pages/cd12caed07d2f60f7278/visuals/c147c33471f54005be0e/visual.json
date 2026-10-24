@@ -20,14 +20,15 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "super fact_indices"
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Property": "peor_anio"
+                  "Property": "mayor_inflacion"
                 }
               },
-              "queryRef": "super fact_indices.peor_anio",
-              "nativeQueryRef": "peor_anio"
+              "queryRef": "super fact_indices.mayor_inflacion",
+              "nativeQueryRef": "MAYOR INFLACIÓN 2017→2025",
+              "displayName": "MAYOR INFLACIÓN 2017→2025"
             }
           ]
         }
@@ -258,7 +259,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Ultima'"
+                  "Value": "'KPIInflacion'"
                 }
               }
             },
@@ -523,5 +524,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e2f289a240a791392517",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "mayor_inflacion"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

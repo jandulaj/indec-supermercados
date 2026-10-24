@@ -20,7 +20,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "super fact_ventas_categoria"
+                      "Entity": "_Medidas"
                     }
                   },
                   "Property": "Rubro que más perdió"

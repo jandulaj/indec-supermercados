@@ -57,7 +57,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "super fact_ventas_categoria"
+                      "Entity": "_Medidas"
                     }
                   },
                   "Property": "% tipo categoría"

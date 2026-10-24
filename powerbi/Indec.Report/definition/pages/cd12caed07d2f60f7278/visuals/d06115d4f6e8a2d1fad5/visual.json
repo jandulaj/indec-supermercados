@@ -10,7 +10,7 @@
     "tabOrder": 1000
   },
   "visual": {
-    "visualType": "clusteredBarChart",
+    "visualType": "lineClusteredColumnComboChart",
     "query": {
       "queryState": {
         "Category": {
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "super dim_categoria"
+                      "Entity": "super dim_periodo"
                     }
                   },
-                  "Property": "nombre_corto"
+                  "Property": "anio"
                 }
               },
-              "queryRef": "super dim_categoria.nombre_corto",
-              "nativeQueryRef": "nombre_corto",
+              "queryRef": "super dim_periodo.anio",
+              "nativeQueryRef": "anio",
               "active": true
             }
           ]
@@ -39,14 +39,34 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "super fact_ventas_categoria"
+                      "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Cambio pp"
+                  "Property": "var_volumen"
                 }
               },
-              "queryRef": "super fact_ventas_categoria.Cambio pp 2017-2025",
-              "nativeQueryRef": "Cambio pp"
+              "queryRef": "_Medidas.var_volumen",
+              "nativeQueryRef": "Volumen (var. anual)",
+              "displayName": "Volumen (var. anual)"
+            }
+          ]
+        },
+        "Y2": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Medidas"
+                    }
+                  },
+                  "Property": "var_precio"
+                }
+              },
+              "queryRef": "_Medidas.var_precio",
+              "nativeQueryRef": "Precios (var. anual)",
+              "displayName": "Precios (var. anual)"
             }
           ]
         }
@@ -55,84 +75,24 @@
         "sort": [
           {
             "field": {
-              "Measure": {
+              "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "super fact_ventas_categoria"
+                    "Entity": "super dim_periodo"
                   }
                 },
-                "Property": "Cambio pp"
+                "Property": "anio"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": true
+        ]
       }
     },
     "objects": {
-      "categoryAxis": [
-        {
-          "properties": {
-            "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "roundRange": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "axisType": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Categorical'"
-                }
-              }
-            }
-          }
-        }
-      ],
       "legend": [
         {
           "properties": {
-            "showGradientLegend": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "valueAxis": [
-        {
-          "properties": {
-            "gridlineColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.2
-                    }
-                  }
-                }
-              }
-            },
             "show": {
               "expr": {
                 "Literal": {
@@ -442,74 +402,7 @@
           }
         },
         {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Conditional": {
-                      "Cases": [
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 2,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "super fact_ventas_categoria"
-                                    }
-                                  },
-                                  "Property": "Cambio pp"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#0B9FB0'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 3,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "super fact_ventas_categoria"
-                                    }
-                                  },
-                                  "Property": "Cambio pp"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#D35F1E'"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
+          "properties": {},
           "selector": {
             "data": [
               {
@@ -518,6 +411,72 @@
                 }
               }
             ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#D35F1E'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Medidas.var_precio"
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#0B2545'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "lineStyles": [
+        {
+          "properties": {
+            "lineChartType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'linear'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "secStart": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "secEnd": {
+              "expr": {
+                "Literal": {
+                  "Value": "2.5D"
+                }
+              }
+            }
           }
         }
       ]
@@ -529,7 +488,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Qué rubros ganaron y perdieron peso en el gasto'"
+                  "Value": "'Las mayores caídas de volumen coinciden con los saltos de precios'"
                 }
               }
             },
@@ -556,7 +515,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Cambio de participación, 2017 vs 2025, en puntos porcentuales'"
+                  "Value": "'Variación anual, 2018–2025. Volumen en columnas (eje izq.), precios en línea (eje der.)'"
                 }
               }
             }
@@ -597,5 +556,51 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "331e2fcec85b80582dfa",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "super dim_periodo"
+              }
+            },
+            "Property": "anio"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e3161bf73df9551b65fe",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "var_volumen"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0adb94e615bbd18962ec",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "var_precio"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

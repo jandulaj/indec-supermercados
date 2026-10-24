@@ -39,7 +39,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "super fact_ventas_categoria"
+                      "Entity": "_Medidas"
                     }
                   },
                   "Property": "Cambio pp"
@@ -58,7 +58,7 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "super fact_ventas_categoria"
+                    "Entity": "_Medidas"
                   }
                 },
                 "Property": "Cambio pp"
@@ -457,7 +457,7 @@
                                 "Measure": {
                                   "Expression": {
                                     "SourceRef": {
-                                      "Entity": "super fact_ventas_categoria"
+                                      "Entity": "_Medidas"
                                     }
                                   },
                                   "Property": "Cambio pp"
@@ -484,7 +484,7 @@
                                 "Measure": {
                                   "Expression": {
                                     "SourceRef": {
-                                      "Entity": "super fact_ventas_categoria"
+                                      "Entity": "_Medidas"
                                     }
                                   },
                                   "Property": "Cambio pp"

@@ -57,7 +57,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "super fact_ventas_medio_pago"
+                      "Entity": "_Medidas"
                     }
                   },
                   "Property": "Ventas medio de pago"
@@ -75,7 +75,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "super fact_ventas_medio_pago"
+                      "Entity": "_Medidas"
                     }
                   },
                   "Property": "% medio de pago"

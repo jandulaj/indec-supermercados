@@ -1,11 +1,6 @@
 table 'super fact_ventas_canal'
 	lineageTag: fe9d8581-a617-4fee-884a-757fa879001b
 
-	measure 'Ventas canal' = SUM ( 'super fact_ventas_canal'[ventas_miles] )
-		lineageTag: 2f2abba9-602d-46d0-8b09-2405bdff995b
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column periodo
 		dataType: dateTime
 		isHidden

@@ -79,7 +79,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "super fact_indices"
+                      "Entity": "_Medidas"
                     }
                   },
                   "Property": "Marcas desest"
@@ -413,7 +413,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "super fact_indices"
+                      "Entity": "_Medidas"
                     }
                   },
                   "Property": "Subtítulo evolución"

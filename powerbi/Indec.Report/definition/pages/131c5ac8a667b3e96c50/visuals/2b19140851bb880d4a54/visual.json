@@ -20,7 +20,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "super fact_indices"
+                      "Entity": "_Medidas"
                     }
                   },
                   "Property": "peor_anio"

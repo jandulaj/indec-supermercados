@@ -5,26 +5,26 @@
       "ordinal": 0,
       "scrollPosition": {
         "x": 0,
-        "y": 76.019777503090239
+        "y": 0
       },
       "nodes": [
         {
           "location": {
-            "x": 784.88925028785422,
+            "x": 726.10062235213115,
             "y": 0
           },
           "nodeIndex": "super dim_categoria",
           "nodeLineageTag": "72fedf3d-1317-4257-a4e7-e1941a644fd2",
           "size": {
-            "height": 188,
+            "height": 235.68043686524129,
             "width": 234
           },
           "zIndex": 3
         },
         {
           "location": {
-            "x": 1191.6589149592776,
-            "y": 294.34185555397818
+            "x": 1079.1496442547041,
+            "y": 237.58042168500413
           },
           "nodeIndex": "super dim_jurisdiccion",
           "nodeLineageTag": "22c47470-3996-4e8e-a533-8288304737d0",
@@ -36,72 +36,85 @@
         },
         {
           "location": {
-            "x": 349.20647263040564,
-            "y": 256.00913855822205
+            "x": 355.28805483065287,
+            "y": 220.53324239011326
           },
           "nodeIndex": "super dim_periodo",
           "nodeLineageTag": "cab00183-947f-45ea-aa30-3ec693653c39",
           "size": {
-            "height": 244,
+            "height": 229.80964153275647,
             "width": 234
           },
           "zIndex": 4
         },
         {
           "location": {
-            "x": 0,
-            "y": 97.163423141203339
+            "x": 36.489493201483313,
+            "y": 157.97924514367554
           },
           "nodeIndex": "super fact_indices",
           "nodeLineageTag": "2eb8121d-3800-4ee3-98a1-10dec33455ce",
           "size": {
-            "height": 670,
+            "height": 340.58096415327566,
             "width": 246
           },
           "zIndex": 7
         },
         {
           "location": {
-            "x": 350.69635973061082,
+            "x": 359.81873303098166,
             "y": 0
           },
           "nodeIndex": "super fact_ventas_canal",
           "nodeLineageTag": "fe9d8581-a617-4fee-884a-757fa879001b",
           "size": {
-            "height": 182,
+            "height": 168.84021843262065,
             "width": 234
           },
           "zIndex": 2
         },
         {
           "location": {
-            "x": 759.81705594911693,
-            "y": 264.84185901016065
+            "x": 706.16521578874551,
+            "y": 294.39222028879215
           },
           "nodeIndex": "super fact_ventas_categoria",
           "nodeLineageTag": "8909099d-09de-478f-aa5c-f95123f1dfe9",
           "size": {
-            "height": 337,
+            "height": 237.59419601180173,
             "width": 282
           },
           "zIndex": 6
         },
         {
           "location": {
-            "x": 349,
-            "y": 559.16852027631239
+            "x": 359.13597033374532,
+            "y": 522.679027074829
           },
           "nodeIndex": "super fact_ventas_medio_pago",
           "nodeLineageTag": "7d4c8b3b-0a63-4f12-9390-aa8fd98a00c8",
           "size": {
-            "height": 282,
+            "height": 262.74165636588373,
             "width": 234
           },
           "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 1361.1224501879549,
+            "y": 0
+          },
+          "nodeIndex": "_Medidas",
+          "nodeLineageTag": "2f99bb3f-3f5c-420b-ba1d-940d185f1a71",
+          "size": {
+            "height": 688.55377008652658,
+            "width": 446.85537700865257
+          },
+          "zIndex": 8
         }
       ],
       "name": "Todas las tablas",
-      "zoomValue": 98.658536585365852,
+      "zoomValue": 96.475626114771742,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,

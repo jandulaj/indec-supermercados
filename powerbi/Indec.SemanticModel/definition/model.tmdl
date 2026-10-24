@@ -20,6 +20,7 @@ ref table 'super fact_indices'
 ref table 'super fact_ventas_canal'
 ref table 'super fact_ventas_categoria'
 ref table 'super fact_ventas_medio_pago'
+ref table _Medidas
 
 ref cultureInfo es-ES
 

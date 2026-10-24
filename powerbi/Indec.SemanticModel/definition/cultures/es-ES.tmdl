@@ -916,10 +916,10 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice.indice_actual": {
+			    "entity__medida.indice_actual": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "super fact_indices",
+			          "ConceptualEntity": "_Medidas",
 			          "ConceptualProperty": "Indice Actual"
 			        }
 			      },
@@ -972,10 +972,10 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice.marcas_desest": {
+			    "entity__medida.marcas_desest": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "super fact_indices",
+			          "ConceptualEntity": "_Medidas",
 			          "ConceptualProperty": "Marcas desest"
 			        }
 			      },
@@ -1165,10 +1165,10 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_canal.ventas_canal": {
+			    "entity__medida.ventas_canal": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "super fact_ventas_canal",
+			          "ConceptualEntity": "_Medidas",
 			          "ConceptualProperty": "Ventas canal"
 			        }
 			      },
@@ -1487,10 +1487,10 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_categoria.ventas_por_categoría": {
+			    "entity__medida.ventas_por_categoría": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "super fact_ventas_categoria",
+			          "ConceptualEntity": "_Medidas",
 			          "ConceptualProperty": "Ventas por categoría"
 			        }
 			      },
@@ -1503,10 +1503,10 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_categoria.ventas_por_jurisdicción": {
+			    "entity__medida.ventas_por_jurisdicción": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "super fact_ventas_categoria",
+			          "ConceptualEntity": "_Medidas",
 			          "ConceptualProperty": "Ventas por jurisdicción"
 			        }
 			      },
@@ -1519,10 +1519,10 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_categoria.ventas_reales_por_jurisdicción": {
+			    "entity__medida.ventas_reales_por_jurisdicción": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "super fact_ventas_categoria",
+			          "ConceptualEntity": "_Medidas",
 			          "ConceptualProperty": "Ventas reales por jurisdicción"
 			        }
 			      },
@@ -1535,10 +1535,10 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_categoria.var_i_a__real_jurisdicción": {
+			    "entity__medida.var_i_a__real_jurisdicción": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "super fact_ventas_categoria",
+			          "ConceptualEntity": "_Medidas",
 			          "ConceptualProperty": "Var i.a. real jurisdicción"
 			        }
 			      },
@@ -1727,10 +1727,10 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_medio_pago.ventas_medio_de_pago": {
+			    "entity__medida.ventas_medio_de_pago": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "super fact_ventas_medio_pago",
+			          "ConceptualEntity": "_Medidas",
 			          "ConceptualProperty": "Ventas medio de pago"
 			        }
 			      },
@@ -1743,10 +1743,10 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_medio_pago.medio_de_pago": {
+			    "entity__medida.medio_de_pago": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "super fact_ventas_medio_pago",
+			          "ConceptualEntity": "_Medidas",
 			          "ConceptualProperty": "% medio de pago"
 			        }
 			      },
@@ -1779,10 +1779,10 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice.subtítulo_evolución": {
+			    "entity__medida.subtítulo_evolución": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "super fact_indices",
+			          "ConceptualEntity": "_Medidas",
 			          "ConceptualProperty": "Subtítulo evolución"
 			        }
 			      },
@@ -1795,10 +1795,10 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice.indice_máximo": {
+			    "entity__medida.indice_máximo": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "super fact_indices",
+			          "ConceptualEntity": "_Medidas",
 			          "ConceptualProperty": "Indice Máximo"
 			        }
 			      },
@@ -1811,10 +1811,10 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice.distancia_al_máximo": {
+			    "entity__medida.distancia_al_máximo": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "super fact_indices",
+			          "ConceptualEntity": "_Medidas",
 			          "ConceptualProperty": "Distancia al Máximo"
 			        }
 			      },
@@ -1827,10 +1827,10 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice.acumulado_año": {
+			    "entity__medida.acumulado_año": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "super fact_indices",
+			          "ConceptualEntity": "_Medidas",
 			          "ConceptualProperty": "Acumulado año"
 			        }
 			      },
@@ -1843,10 +1843,10 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_medio_pago.efectivo_último_año": {
+			    "entity__medida.efectivo_último_año": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "super fact_ventas_medio_pago",
+			          "ConceptualEntity": "_Medidas",
 			          "ConceptualProperty": "% efectivo último año"
 			        }
 			      },
@@ -1879,10 +1879,10 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_categoria.tipo_categoría": {
+			    "entity__medida.tipo_categoría": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "super fact_ventas_categoria",
+			          "ConceptualEntity": "_Medidas",
 			          "ConceptualProperty": "% tipo categoría"
 			        }
 			      },
@@ -1925,10 +1925,10 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_categoria.ventas_reales_por_categoría": {
+			    "entity__medida.ventas_reales_por_categoría": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "super fact_ventas_categoria",
+			          "ConceptualEntity": "_Medidas",
 			          "ConceptualProperty": "Ventas reales por categoría"
 			        }
 			      },
@@ -1964,10 +1964,10 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_categoria.cambio_pp": {
+			    "entity__medida.cambio_pp": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "super fact_ventas_categoria",
+			          "ConceptualEntity": "_Medidas",
 			          "ConceptualProperty": "Cambio pp"
 			        }
 			      },
@@ -1990,10 +1990,10 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_categoria.rubro_que_más_ganó": {
+			    "entity__medida.rubro_que_más_ganó": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "super fact_ventas_categoria",
+			          "ConceptualEntity": "_Medidas",
 			          "ConceptualProperty": "Rubro que más ganó"
 			        }
 			      },
@@ -2006,10 +2006,10 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_categoria.rubro_que_más_perdió": {
+			    "entity__medida.rubro_que_más_perdió": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "super fact_ventas_categoria",
+			          "ConceptualEntity": "_Medidas",
 			          "ConceptualProperty": "Rubro que más perdió"
 			        }
 			      },
@@ -2045,10 +2045,10 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice.nominal": {
+			    "entity__medida.nominal": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "super fact_indices",
+			          "ConceptualEntity": "_Medidas",
 			          "ConceptualProperty": "Nominal"
 			        }
 			      },
@@ -2061,10 +2061,10 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice.volumen": {
+			    "entity__medida.volumen": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "super fact_indices",
+			          "ConceptualEntity": "_Medidas",
 			          "ConceptualProperty": "Volumen"
 			        }
 			      },
@@ -2077,10 +2077,10 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice.precio": {
+			    "entity__medida.precio": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "super fact_indices",
+			          "ConceptualEntity": "_Medidas",
 			          "ConceptualProperty": "Precio"
 			        }
 			      },
@@ -2093,11 +2093,11 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice.var_volumen_1erúltimo_año_completo": {
+			    "entity__medida.var_volumen_1erúltimo_año_completo": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "super fact_indices",
-			          "ConceptualProperty": "Var volumen 1er-último año completo"
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "var volumen 1er-último año completo"
 			        }
 			      },
 			      "State": "Generated",
@@ -2125,10 +2125,10 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice.var_precio_1erúltimo_año_completo": {
+			    "entity__medida.var_precio_1erúltimo_año_completo": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "super fact_indices",
+			          "ConceptualEntity": "_Medidas",
 			          "ConceptualProperty": "Var precio 1er-último año completo"
 			        }
 			      },
@@ -2157,10 +2157,10 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice.var_nominal_1erúltimo_año_completo": {
+			    "entity__medida.var_nominal_1erúltimo_año_completo": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "super fact_indices",
+			          "ConceptualEntity": "_Medidas",
 			          "ConceptualProperty": "Var nominal 1er-último año completo"
 			        }
 			      },
@@ -2189,10 +2189,10 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice.peor_anio": {
+			    "entity__medida.peor_anio": {
 			      "Definition": {
 			        "Binding": {
-			          "ConceptualEntity": "super fact_indices",
+			          "ConceptualEntity": "_Medidas",
 			          "ConceptualProperty": "peor_anio"
 			        }
 			      },
@@ -2218,6 +2218,185 @@ cultureInfo es-ES
 			              "Agent": "PowerBI.VisualColumnRename"
 			            },
 			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.mayor_inflacion": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "mayor_inflacion"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "mayor inflacion": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "mayor_inflacion": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "MAYOR INFLACIÓN 2017→2025": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.var_volumen": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "var_volumen"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "var volumen": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "var_volumen": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Volumen (var. anual)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.primer_anio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "primer_anio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "primer anio": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "primer_anio": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.ultimo_anio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "ultimo_anio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ultimo anio": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ultimo_anio": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.var_precio": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "var_precio"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "var precio": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "var_precio": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Precios (var. anual)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "_medida": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__medida.x": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Medidas",
+			          "ConceptualProperty": "x"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "x": {
+			            "State": "Generated"
 			          }
 			        }
 			      ]
@@ -2454,7 +2633,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice_has_peor_anio": {
+			    "super_fact_indice_has_entity__medida_var_precio": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_indices"
 			      },
@@ -2465,9 +2644,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_indice"
 			          }
 			        },
-			        "super_fact_indice.peor_anio": {
+			        "entity__medida.var_precio": {
 			          "Target": {
-			            "Entity": "super_fact_indice.peor_anio"
+			            "Entity": "entity__medida.var_precio"
 			          }
 			        }
 			      },
@@ -2478,16 +2657,49 @@ cultureInfo es-ES
 			              "Role": "super_fact_indice"
 			            },
 			            "Object": {
-			              "Role": "super_fact_indice.peor_anio"
+			              "Role": "entity__medida.var_precio"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "super_fact_indices_have_peor_anio"
+			          "ID": "super_fact_indices_have_var_precio"
 			        }
 			      ]
 			    },
-			    "super_fact_indice_has_var_nominal_1erúltimo_año_completo": {
+			    "super_dim_periodo_has_entity__medida_var_precio": {
+			      "Binding": {
+			        "ConceptualEntity": "super dim_periodo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "super_dim_periodo": {
+			          "Target": {
+			            "Entity": "super_dim_periodo"
+			          }
+			        },
+			        "entity__medida.var_precio": {
+			          "Target": {
+			            "Entity": "entity__medida.var_precio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "super_dim_periodo"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.var_precio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "super_dim_periodos_have_var_precio"
+			        }
+			      ]
+			    },
+			    "super_fact_indice_has_entity__medida_ultimo_anio": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_indices"
 			      },
@@ -2498,9 +2710,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_indice"
 			          }
 			        },
-			        "super_fact_indice.var_nominal_1erúltimo_año_completo": {
+			        "entity__medida.ultimo_anio": {
 			          "Target": {
-			            "Entity": "super_fact_indice.var_nominal_1erúltimo_año_completo"
+			            "Entity": "entity__medida.ultimo_anio"
 			          }
 			        }
 			      },
@@ -2511,7 +2723,205 @@ cultureInfo es-ES
 			              "Role": "super_fact_indice"
 			            },
 			            "Object": {
-			              "Role": "super_fact_indice.var_nominal_1erúltimo_año_completo"
+			              "Role": "entity__medida.ultimo_anio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "super_fact_indices_have_ultimo_anio"
+			        }
+			      ]
+			    },
+			    "super_fact_indice_has_entity__medida_primer_anio": {
+			      "Binding": {
+			        "ConceptualEntity": "super fact_indices"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "super_fact_indice": {
+			          "Target": {
+			            "Entity": "super_fact_indice"
+			          }
+			        },
+			        "entity__medida.primer_anio": {
+			          "Target": {
+			            "Entity": "entity__medida.primer_anio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "super_fact_indice"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.primer_anio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "super_fact_indices_have_primer_anio"
+			        }
+			      ]
+			    },
+			    "super_fact_indice_has_entity__medida_var_volumen": {
+			      "Binding": {
+			        "ConceptualEntity": "super fact_indices"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "super_fact_indice": {
+			          "Target": {
+			            "Entity": "super_fact_indice"
+			          }
+			        },
+			        "entity__medida.var_volumen": {
+			          "Target": {
+			            "Entity": "entity__medida.var_volumen"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "super_fact_indice"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.var_volumen"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "super_fact_indices_have_var_volumen"
+			        }
+			      ]
+			    },
+			    "super_dim_periodo_has_entity__medida_var_volumen": {
+			      "Binding": {
+			        "ConceptualEntity": "super dim_periodo"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "super_dim_periodo": {
+			          "Target": {
+			            "Entity": "super_dim_periodo"
+			          }
+			        },
+			        "entity__medida.var_volumen": {
+			          "Target": {
+			            "Entity": "entity__medida.var_volumen"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "super_dim_periodo"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.var_volumen"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "super_dim_periodos_have_var_volumen"
+			        }
+			      ]
+			    },
+			    "entity__medida_has_mayor_inflacion": {
+			      "Binding": {
+			        "ConceptualEntity": "_Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__medida": {
+			          "Target": {
+			            "Entity": "entity__medida"
+			          }
+			        },
+			        "entity__medida.mayor_inflacion": {
+			          "Target": {
+			            "Entity": "entity__medida.mayor_inflacion"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__medida"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.mayor_inflacion"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_medidas_have_mayor_inflacion"
+			        }
+			      ]
+			    },
+			    "entity__medida_has_peor_anio": {
+			      "Binding": {
+			        "ConceptualEntity": "_Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__medida": {
+			          "Target": {
+			            "Entity": "entity__medida"
+			          }
+			        },
+			        "entity__medida.peor_anio": {
+			          "Target": {
+			            "Entity": "entity__medida.peor_anio"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__medida"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.peor_anio"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_medidas_have_peor_anio"
+			        }
+			      ]
+			    },
+			    "super_fact_indice_has_entity__medida_var_nominal_1erúltimo_año_completo": {
+			      "Binding": {
+			        "ConceptualEntity": "super fact_indices"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "super_fact_indice": {
+			          "Target": {
+			            "Entity": "super_fact_indice"
+			          }
+			        },
+			        "entity__medida.var_nominal_1erúltimo_año_completo": {
+			          "Target": {
+			            "Entity": "entity__medida.var_nominal_1erúltimo_año_completo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "super_fact_indice"
+			            },
+			            "Object": {
+			              "Role": "entity__medida.var_nominal_1erúltimo_año_completo"
 			            }
 			          },
 			          "State": "Generated",
@@ -2520,7 +2930,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice_has_var_precio_1erúltimo_año_completo": {
+			    "super_fact_indice_has_entity__medida_var_precio_1erúltimo_año_completo": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_indices"
 			      },
@@ -2531,9 +2941,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_indice"
 			          }
 			        },
-			        "super_fact_indice.var_precio_1erúltimo_año_completo": {
+			        "entity__medida.var_precio_1erúltimo_año_completo": {
 			          "Target": {
-			            "Entity": "super_fact_indice.var_precio_1erúltimo_año_completo"
+			            "Entity": "entity__medida.var_precio_1erúltimo_año_completo"
 			          }
 			        }
 			      },
@@ -2544,7 +2954,7 @@ cultureInfo es-ES
 			              "Role": "super_fact_indice"
 			            },
 			            "Object": {
-			              "Role": "super_fact_indice.var_precio_1erúltimo_año_completo"
+			              "Role": "entity__medida.var_precio_1erúltimo_año_completo"
 			            }
 			          },
 			          "State": "Generated",
@@ -2553,7 +2963,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice_has_var_volumen_1erúltimo_año_completo": {
+			    "super_fact_indice_has_entity__medida_var_volumen_1erúltimo_año_completo": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_indices"
 			      },
@@ -2564,9 +2974,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_indice"
 			          }
 			        },
-			        "super_fact_indice.var_volumen_1erúltimo_año_completo": {
+			        "entity__medida.var_volumen_1erúltimo_año_completo": {
 			          "Target": {
-			            "Entity": "super_fact_indice.var_volumen_1erúltimo_año_completo"
+			            "Entity": "entity__medida.var_volumen_1erúltimo_año_completo"
 			          }
 			        }
 			      },
@@ -2577,7 +2987,7 @@ cultureInfo es-ES
 			              "Role": "super_fact_indice"
 			            },
 			            "Object": {
-			              "Role": "super_fact_indice.var_volumen_1erúltimo_año_completo"
+			              "Role": "entity__medida.var_volumen_1erúltimo_año_completo"
 			            }
 			          },
 			          "State": "Generated",
@@ -2586,7 +2996,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice_has_precio": {
+			    "super_fact_indice_has_entity__medida_precio": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_indices"
 			      },
@@ -2597,9 +3007,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_indice"
 			          }
 			        },
-			        "super_fact_indice.precio": {
+			        "entity__medida.precio": {
 			          "Target": {
-			            "Entity": "super_fact_indice.precio"
+			            "Entity": "entity__medida.precio"
 			          }
 			        }
 			      },
@@ -2610,7 +3020,7 @@ cultureInfo es-ES
 			              "Role": "super_fact_indice"
 			            },
 			            "Object": {
-			              "Role": "super_fact_indice.precio"
+			              "Role": "entity__medida.precio"
 			            }
 			          },
 			          "State": "Generated",
@@ -2619,7 +3029,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice_has_volumen": {
+			    "super_fact_indice_has_entity__medida_volumen": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_indices"
 			      },
@@ -2630,9 +3040,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_indice"
 			          }
 			        },
-			        "super_fact_indice.volumen": {
+			        "entity__medida.volumen": {
 			          "Target": {
-			            "Entity": "super_fact_indice.volumen"
+			            "Entity": "entity__medida.volumen"
 			          }
 			        }
 			      },
@@ -2643,7 +3053,7 @@ cultureInfo es-ES
 			              "Role": "super_fact_indice"
 			            },
 			            "Object": {
-			              "Role": "super_fact_indice.volumen"
+			              "Role": "entity__medida.volumen"
 			            }
 			          },
 			          "State": "Generated",
@@ -2652,7 +3062,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice_has_nominal": {
+			    "super_fact_indice_has_entity__medida_nominal": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_indices"
 			      },
@@ -2663,9 +3073,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_indice"
 			          }
 			        },
-			        "super_fact_indice.nominal": {
+			        "entity__medida.nominal": {
 			          "Target": {
-			            "Entity": "super_fact_indice.nominal"
+			            "Entity": "entity__medida.nominal"
 			          }
 			        }
 			      },
@@ -2676,7 +3086,7 @@ cultureInfo es-ES
 			              "Role": "super_fact_indice"
 			            },
 			            "Object": {
-			              "Role": "super_fact_indice.nominal"
+			              "Role": "entity__medida.nominal"
 			            }
 			          },
 			          "State": "Generated",
@@ -2696,7 +3106,7 @@ cultureInfo es-ES
 			              }
 			            ],
 			            "Measurement": {
-			              "Role": "super_fact_indice.nominal"
+			              "Role": "entity__medida.nominal"
 			            }
 			          },
 			          "State": "Generated",
@@ -2738,20 +3148,20 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_categoria_has_rubro_que_más_perdió": {
+			    "entity__medida_has_rubro_que_más_perdió": {
 			      "Binding": {
-			        "ConceptualEntity": "super fact_ventas_categoria"
+			        "ConceptualEntity": "_Medidas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "super_fact_ventas_categoria": {
+			        "entity__medida": {
 			          "Target": {
-			            "Entity": "super_fact_ventas_categoria"
+			            "Entity": "entity__medida"
 			          }
 			        },
-			        "super_fact_ventas_categoria.rubro_que_más_perdió": {
+			        "entity__medida.rubro_que_más_perdió": {
 			          "Target": {
-			            "Entity": "super_fact_ventas_categoria.rubro_que_más_perdió"
+			            "Entity": "entity__medida.rubro_que_más_perdió"
 			          }
 			        }
 			      },
@@ -2759,32 +3169,32 @@ cultureInfo es-ES
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "super_fact_ventas_categoria"
+			              "Role": "entity__medida"
 			            },
 			            "Object": {
-			              "Role": "super_fact_ventas_categoria.rubro_que_más_perdió"
+			              "Role": "entity__medida.rubro_que_más_perdió"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "super_fact_ventas_categorias_have_rubro_que_más_perdió"
+			          "ID": "Phrasing_medidas_have_rubro_que_más_perdió"
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_categoria_has_rubro_que_más_ganó": {
+			    "entity__medida_has_rubro_que_más_ganó": {
 			      "Binding": {
-			        "ConceptualEntity": "super fact_ventas_categoria"
+			        "ConceptualEntity": "_Medidas"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "super_fact_ventas_categoria": {
+			        "entity__medida": {
 			          "Target": {
-			            "Entity": "super_fact_ventas_categoria"
+			            "Entity": "entity__medida"
 			          }
 			        },
-			        "super_fact_ventas_categoria.rubro_que_más_ganó": {
+			        "entity__medida.rubro_que_más_ganó": {
 			          "Target": {
-			            "Entity": "super_fact_ventas_categoria.rubro_que_más_ganó"
+			            "Entity": "entity__medida.rubro_que_más_ganó"
 			          }
 			        }
 			      },
@@ -2792,19 +3202,19 @@ cultureInfo es-ES
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "super_fact_ventas_categoria"
+			              "Role": "entity__medida"
 			            },
 			            "Object": {
-			              "Role": "super_fact_ventas_categoria.rubro_que_más_ganó"
+			              "Role": "entity__medida.rubro_que_más_ganó"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "super_fact_ventas_categorias_have_rubro_que_más_ganó"
+			          "ID": "Phrasing_medidas_have_rubro_que_más_ganó"
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_categoria_has_cambio_pp": {
+			    "super_fact_ventas_categoria_has_entity__medida_cambio_pp": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_ventas_categoria"
 			      },
@@ -2815,9 +3225,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_ventas_categoria"
 			          }
 			        },
-			        "super_fact_ventas_categoria.cambio_pp": {
+			        "entity__medida.cambio_pp": {
 			          "Target": {
-			            "Entity": "super_fact_ventas_categoria.cambio_pp"
+			            "Entity": "entity__medida.cambio_pp"
 			          }
 			        }
 			      },
@@ -2828,7 +3238,7 @@ cultureInfo es-ES
 			              "Role": "super_fact_ventas_categoria"
 			            },
 			            "Object": {
-			              "Role": "super_fact_ventas_categoria.cambio_pp"
+			              "Role": "entity__medida.cambio_pp"
 			            }
 			          },
 			          "State": "Generated",
@@ -2870,7 +3280,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_categoria_has_ventas_reales_por_categoría": {
+			    "super_fact_ventas_categoria_has_entity__medida_ventas_reales_por_categoría": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_ventas_categoria"
 			      },
@@ -2881,9 +3291,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_ventas_categoria"
 			          }
 			        },
-			        "super_fact_ventas_categoria.ventas_reales_por_categoría": {
+			        "entity__medida.ventas_reales_por_categoría": {
 			          "Target": {
-			            "Entity": "super_fact_ventas_categoria.ventas_reales_por_categoría"
+			            "Entity": "entity__medida.ventas_reales_por_categoría"
 			          }
 			        }
 			      },
@@ -2894,7 +3304,7 @@ cultureInfo es-ES
 			              "Role": "super_fact_ventas_categoria"
 			            },
 			            "Object": {
-			              "Role": "super_fact_ventas_categoria.ventas_reales_por_categoría"
+			              "Role": "entity__medida.ventas_reales_por_categoría"
 			            }
 			          },
 			          "State": "Generated",
@@ -2903,7 +3313,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice_has_super_fact_ventas_categoria_ventas_reales_por_categoría": {
+			    "super_fact_indice_has_entity__medida_ventas_reales_por_categoría": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_indices"
 			      },
@@ -2914,9 +3324,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_indice"
 			          }
 			        },
-			        "super_fact_ventas_categoria.ventas_reales_por_categoría": {
+			        "entity__medida.ventas_reales_por_categoría": {
 			          "Target": {
-			            "Entity": "super_fact_ventas_categoria.ventas_reales_por_categoría"
+			            "Entity": "entity__medida.ventas_reales_por_categoría"
 			          }
 			        }
 			      },
@@ -2927,7 +3337,7 @@ cultureInfo es-ES
 			              "Role": "super_fact_indice"
 			            },
 			            "Object": {
-			              "Role": "super_fact_ventas_categoria.ventas_reales_por_categoría"
+			              "Role": "entity__medida.ventas_reales_por_categoría"
 			            }
 			          },
 			          "State": "Generated",
@@ -2936,7 +3346,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_dim_periodo_has_super_fact_ventas_categoria_ventas_reales_por_categoría": {
+			    "super_dim_periodo_has_entity__medida_ventas_reales_por_categoría": {
 			      "Binding": {
 			        "ConceptualEntity": "super dim_periodo"
 			      },
@@ -2947,9 +3357,9 @@ cultureInfo es-ES
 			            "Entity": "super_dim_periodo"
 			          }
 			        },
-			        "super_fact_ventas_categoria.ventas_reales_por_categoría": {
+			        "entity__medida.ventas_reales_por_categoría": {
 			          "Target": {
-			            "Entity": "super_fact_ventas_categoria.ventas_reales_por_categoría"
+			            "Entity": "entity__medida.ventas_reales_por_categoría"
 			          }
 			        }
 			      },
@@ -2960,7 +3370,7 @@ cultureInfo es-ES
 			              "Role": "super_dim_periodo"
 			            },
 			            "Object": {
-			              "Role": "super_fact_ventas_categoria.ventas_reales_por_categoría"
+			              "Role": "entity__medida.ventas_reales_por_categoría"
 			            }
 			          },
 			          "State": "Generated",
@@ -2969,7 +3379,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_categoria_has_tipo_categoría": {
+			    "super_fact_ventas_categoria_has_entity__medida_tipo_categoría": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_ventas_categoria"
 			      },
@@ -2980,9 +3390,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_ventas_categoria"
 			          }
 			        },
-			        "super_fact_ventas_categoria.tipo_categoría": {
+			        "entity__medida.tipo_categoría": {
 			          "Target": {
-			            "Entity": "super_fact_ventas_categoria.tipo_categoría"
+			            "Entity": "entity__medida.tipo_categoría"
 			          }
 			        }
 			      },
@@ -2993,7 +3403,7 @@ cultureInfo es-ES
 			              "Role": "super_fact_ventas_categoria"
 			            },
 			            "Object": {
-			              "Role": "super_fact_ventas_categoria.tipo_categoría"
+			              "Role": "entity__medida.tipo_categoría"
 			            }
 			          },
 			          "State": "Generated",
@@ -3002,7 +3412,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_medio_pago_has_efectivo_último_año": {
+			    "super_fact_ventas_medio_pago_has_entity__medida_efectivo_último_año": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_ventas_medio_pago"
 			      },
@@ -3013,9 +3423,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_ventas_medio_pago"
 			          }
 			        },
-			        "super_fact_ventas_medio_pago.efectivo_último_año": {
+			        "entity__medida.efectivo_último_año": {
 			          "Target": {
-			            "Entity": "super_fact_ventas_medio_pago.efectivo_último_año"
+			            "Entity": "entity__medida.efectivo_último_año"
 			          }
 			        }
 			      },
@@ -3026,7 +3436,7 @@ cultureInfo es-ES
 			              "Role": "super_fact_ventas_medio_pago"
 			            },
 			            "Object": {
-			              "Role": "super_fact_ventas_medio_pago.efectivo_último_año"
+			              "Role": "entity__medida.efectivo_último_año"
 			            }
 			          },
 			          "State": "Generated",
@@ -3035,7 +3445,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice_has_acumulado_año": {
+			    "super_fact_indice_has_entity__medida_acumulado_año": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_indices"
 			      },
@@ -3046,9 +3456,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_indice"
 			          }
 			        },
-			        "super_fact_indice.acumulado_año": {
+			        "entity__medida.acumulado_año": {
 			          "Target": {
-			            "Entity": "super_fact_indice.acumulado_año"
+			            "Entity": "entity__medida.acumulado_año"
 			          }
 			        }
 			      },
@@ -3059,7 +3469,7 @@ cultureInfo es-ES
 			              "Role": "super_fact_indice"
 			            },
 			            "Object": {
-			              "Role": "super_fact_indice.acumulado_año"
+			              "Role": "entity__medida.acumulado_año"
 			            }
 			          },
 			          "State": "Generated",
@@ -3068,7 +3478,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice_has_distancia_al_máximo": {
+			    "super_fact_indice_has_entity__medida_distancia_al_máximo": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_indices"
 			      },
@@ -3079,9 +3489,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_indice"
 			          }
 			        },
-			        "super_fact_indice.distancia_al_máximo": {
+			        "entity__medida.distancia_al_máximo": {
 			          "Target": {
-			            "Entity": "super_fact_indice.distancia_al_máximo"
+			            "Entity": "entity__medida.distancia_al_máximo"
 			          }
 			        }
 			      },
@@ -3092,7 +3502,7 @@ cultureInfo es-ES
 			              "Role": "super_fact_indice"
 			            },
 			            "Object": {
-			              "Role": "super_fact_indice.distancia_al_máximo"
+			              "Role": "entity__medida.distancia_al_máximo"
 			            }
 			          },
 			          "State": "Generated",
@@ -3101,7 +3511,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice_has_indice_máximo": {
+			    "super_fact_indice_has_entity__medida_indice_máximo": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_indices"
 			      },
@@ -3112,9 +3522,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_indice"
 			          }
 			        },
-			        "super_fact_indice.indice_máximo": {
+			        "entity__medida.indice_máximo": {
 			          "Target": {
-			            "Entity": "super_fact_indice.indice_máximo"
+			            "Entity": "entity__medida.indice_máximo"
 			          }
 			        }
 			      },
@@ -3125,7 +3535,7 @@ cultureInfo es-ES
 			              "Role": "super_fact_indice"
 			            },
 			            "Object": {
-			              "Role": "super_fact_indice.indice_máximo"
+			              "Role": "entity__medida.indice_máximo"
 			            }
 			          },
 			          "State": "Generated",
@@ -3134,7 +3544,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice_has_subtítulo_evolución": {
+			    "super_fact_indice_has_entity__medida_subtítulo_evolución": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_indices"
 			      },
@@ -3145,9 +3555,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_indice"
 			          }
 			        },
-			        "super_fact_indice.subtítulo_evolución": {
+			        "entity__medida.subtítulo_evolución": {
 			          "Target": {
-			            "Entity": "super_fact_indice.subtítulo_evolución"
+			            "Entity": "entity__medida.subtítulo_evolución"
 			          }
 			        }
 			      },
@@ -3158,7 +3568,7 @@ cultureInfo es-ES
 			              "Role": "super_fact_indice"
 			            },
 			            "Object": {
-			              "Role": "super_fact_indice.subtítulo_evolución"
+			              "Role": "entity__medida.subtítulo_evolución"
 			            }
 			          },
 			          "State": "Generated",
@@ -3167,7 +3577,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_medio_pago_has_medio_de_pago": {
+			    "super_fact_ventas_medio_pago_has_entity__medida_medio_de_pago": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_ventas_medio_pago"
 			      },
@@ -3178,9 +3588,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_ventas_medio_pago"
 			          }
 			        },
-			        "super_fact_ventas_medio_pago.medio_de_pago": {
+			        "entity__medida.medio_de_pago": {
 			          "Target": {
-			            "Entity": "super_fact_ventas_medio_pago.medio_de_pago"
+			            "Entity": "entity__medida.medio_de_pago"
 			          }
 			        }
 			      },
@@ -3191,7 +3601,7 @@ cultureInfo es-ES
 			              "Role": "super_fact_ventas_medio_pago"
 			            },
 			            "Object": {
-			              "Role": "super_fact_ventas_medio_pago.medio_de_pago"
+			              "Role": "entity__medida.medio_de_pago"
 			            }
 			          },
 			          "State": "Generated",
@@ -3200,7 +3610,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_medio_pago_has_ventas_medio_de_pago": {
+			    "super_fact_ventas_medio_pago_has_entity__medida_ventas_medio_de_pago": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_ventas_medio_pago"
 			      },
@@ -3211,9 +3621,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_ventas_medio_pago"
 			          }
 			        },
-			        "super_fact_ventas_medio_pago.ventas_medio_de_pago": {
+			        "entity__medida.ventas_medio_de_pago": {
 			          "Target": {
-			            "Entity": "super_fact_ventas_medio_pago.ventas_medio_de_pago"
+			            "Entity": "entity__medida.ventas_medio_de_pago"
 			          }
 			        }
 			      },
@@ -3224,7 +3634,7 @@ cultureInfo es-ES
 			              "Role": "super_fact_ventas_medio_pago"
 			            },
 			            "Object": {
-			              "Role": "super_fact_ventas_medio_pago.ventas_medio_de_pago"
+			              "Role": "entity__medida.ventas_medio_de_pago"
 			            }
 			          },
 			          "State": "Generated",
@@ -3398,7 +3808,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_categoria_has_var_i_a__real_jurisdicción": {
+			    "super_fact_ventas_categoria_has_entity__medida_var_i_a__real_jurisdicción": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_ventas_categoria"
 			      },
@@ -3409,9 +3819,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_ventas_categoria"
 			          }
 			        },
-			        "super_fact_ventas_categoria.var_i_a__real_jurisdicción": {
+			        "entity__medida.var_i_a__real_jurisdicción": {
 			          "Target": {
-			            "Entity": "super_fact_ventas_categoria.var_i_a__real_jurisdicción"
+			            "Entity": "entity__medida.var_i_a__real_jurisdicción"
 			          }
 			        }
 			      },
@@ -3422,7 +3832,7 @@ cultureInfo es-ES
 			              "Role": "super_fact_ventas_categoria"
 			            },
 			            "Object": {
-			              "Role": "super_fact_ventas_categoria.var_i_a__real_jurisdicción"
+			              "Role": "entity__medida.var_i_a__real_jurisdicción"
 			            }
 			          },
 			          "State": "Generated",
@@ -3431,7 +3841,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice_has_super_fact_ventas_categoria_var_i_a__real_jurisdicción": {
+			    "super_fact_indice_has_entity__medida_var_i_a__real_jurisdicción": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_indices"
 			      },
@@ -3442,9 +3852,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_indice"
 			          }
 			        },
-			        "super_fact_ventas_categoria.var_i_a__real_jurisdicción": {
+			        "entity__medida.var_i_a__real_jurisdicción": {
 			          "Target": {
-			            "Entity": "super_fact_ventas_categoria.var_i_a__real_jurisdicción"
+			            "Entity": "entity__medida.var_i_a__real_jurisdicción"
 			          }
 			        }
 			      },
@@ -3455,7 +3865,7 @@ cultureInfo es-ES
 			              "Role": "super_fact_indice"
 			            },
 			            "Object": {
-			              "Role": "super_fact_ventas_categoria.var_i_a__real_jurisdicción"
+			              "Role": "entity__medida.var_i_a__real_jurisdicción"
 			            }
 			          },
 			          "State": "Generated",
@@ -3464,7 +3874,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_dim_periodo_has_super_fact_ventas_categoria_var_i_a__real_jurisdicción": {
+			    "super_dim_periodo_has_entity__medida_var_i_a__real_jurisdicción": {
 			      "Binding": {
 			        "ConceptualEntity": "super dim_periodo"
 			      },
@@ -3475,9 +3885,9 @@ cultureInfo es-ES
 			            "Entity": "super_dim_periodo"
 			          }
 			        },
-			        "super_fact_ventas_categoria.var_i_a__real_jurisdicción": {
+			        "entity__medida.var_i_a__real_jurisdicción": {
 			          "Target": {
-			            "Entity": "super_fact_ventas_categoria.var_i_a__real_jurisdicción"
+			            "Entity": "entity__medida.var_i_a__real_jurisdicción"
 			          }
 			        }
 			      },
@@ -3488,7 +3898,7 @@ cultureInfo es-ES
 			              "Role": "super_dim_periodo"
 			            },
 			            "Object": {
-			              "Role": "super_fact_ventas_categoria.var_i_a__real_jurisdicción"
+			              "Role": "entity__medida.var_i_a__real_jurisdicción"
 			            }
 			          },
 			          "State": "Generated",
@@ -3497,7 +3907,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_categoria_has_ventas_reales_por_jurisdicción": {
+			    "super_fact_ventas_categoria_has_entity__medida_ventas_reales_por_jurisdicción": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_ventas_categoria"
 			      },
@@ -3508,9 +3918,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_ventas_categoria"
 			          }
 			        },
-			        "super_fact_ventas_categoria.ventas_reales_por_jurisdicción": {
+			        "entity__medida.ventas_reales_por_jurisdicción": {
 			          "Target": {
-			            "Entity": "super_fact_ventas_categoria.ventas_reales_por_jurisdicción"
+			            "Entity": "entity__medida.ventas_reales_por_jurisdicción"
 			          }
 			        }
 			      },
@@ -3521,7 +3931,7 @@ cultureInfo es-ES
 			              "Role": "super_fact_ventas_categoria"
 			            },
 			            "Object": {
-			              "Role": "super_fact_ventas_categoria.ventas_reales_por_jurisdicción"
+			              "Role": "entity__medida.ventas_reales_por_jurisdicción"
 			            }
 			          },
 			          "State": "Generated",
@@ -3530,7 +3940,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice_has_super_fact_ventas_categoria_ventas_reales_por_jurisdicción": {
+			    "super_fact_indice_has_entity__medida_ventas_reales_por_jurisdicción": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_indices"
 			      },
@@ -3541,9 +3951,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_indice"
 			          }
 			        },
-			        "super_fact_ventas_categoria.ventas_reales_por_jurisdicción": {
+			        "entity__medida.ventas_reales_por_jurisdicción": {
 			          "Target": {
-			            "Entity": "super_fact_ventas_categoria.ventas_reales_por_jurisdicción"
+			            "Entity": "entity__medida.ventas_reales_por_jurisdicción"
 			          }
 			        }
 			      },
@@ -3554,7 +3964,7 @@ cultureInfo es-ES
 			              "Role": "super_fact_indice"
 			            },
 			            "Object": {
-			              "Role": "super_fact_ventas_categoria.ventas_reales_por_jurisdicción"
+			              "Role": "entity__medida.ventas_reales_por_jurisdicción"
 			            }
 			          },
 			          "State": "Generated",
@@ -3563,7 +3973,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_dim_periodo_has_super_fact_ventas_categoria_ventas_reales_por_jurisdicción": {
+			    "super_dim_periodo_has_entity__medida_ventas_reales_por_jurisdicción": {
 			      "Binding": {
 			        "ConceptualEntity": "super dim_periodo"
 			      },
@@ -3574,9 +3984,9 @@ cultureInfo es-ES
 			            "Entity": "super_dim_periodo"
 			          }
 			        },
-			        "super_fact_ventas_categoria.ventas_reales_por_jurisdicción": {
+			        "entity__medida.ventas_reales_por_jurisdicción": {
 			          "Target": {
-			            "Entity": "super_fact_ventas_categoria.ventas_reales_por_jurisdicción"
+			            "Entity": "entity__medida.ventas_reales_por_jurisdicción"
 			          }
 			        }
 			      },
@@ -3587,7 +3997,7 @@ cultureInfo es-ES
 			              "Role": "super_dim_periodo"
 			            },
 			            "Object": {
-			              "Role": "super_fact_ventas_categoria.ventas_reales_por_jurisdicción"
+			              "Role": "entity__medida.ventas_reales_por_jurisdicción"
 			            }
 			          },
 			          "State": "Generated",
@@ -3596,7 +4006,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_categoria_has_ventas_por_jurisdicción": {
+			    "super_fact_ventas_categoria_has_entity__medida_ventas_por_jurisdicción": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_ventas_categoria"
 			      },
@@ -3607,9 +4017,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_ventas_categoria"
 			          }
 			        },
-			        "super_fact_ventas_categoria.ventas_por_jurisdicción": {
+			        "entity__medida.ventas_por_jurisdicción": {
 			          "Target": {
-			            "Entity": "super_fact_ventas_categoria.ventas_por_jurisdicción"
+			            "Entity": "entity__medida.ventas_por_jurisdicción"
 			          }
 			        }
 			      },
@@ -3620,7 +4030,7 @@ cultureInfo es-ES
 			              "Role": "super_fact_ventas_categoria"
 			            },
 			            "Object": {
-			              "Role": "super_fact_ventas_categoria.ventas_por_jurisdicción"
+			              "Role": "entity__medida.ventas_por_jurisdicción"
 			            }
 			          },
 			          "State": "Generated",
@@ -3629,7 +4039,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_categoria_has_ventas_por_categoría": {
+			    "super_fact_ventas_categoria_has_entity__medida_ventas_por_categoría": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_ventas_categoria"
 			      },
@@ -3640,9 +4050,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_ventas_categoria"
 			          }
 			        },
-			        "super_fact_ventas_categoria.ventas_por_categoría": {
+			        "entity__medida.ventas_por_categoría": {
 			          "Target": {
-			            "Entity": "super_fact_ventas_categoria.ventas_por_categoría"
+			            "Entity": "entity__medida.ventas_por_categoría"
 			          }
 			        }
 			      },
@@ -3653,7 +4063,7 @@ cultureInfo es-ES
 			              "Role": "super_fact_ventas_categoria"
 			            },
 			            "Object": {
-			              "Role": "super_fact_ventas_categoria.ventas_por_categoría"
+			              "Role": "entity__medida.ventas_por_categoría"
 			            }
 			          },
 			          "State": "Generated",
@@ -3728,7 +4138,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_ventas_canal_has_ventas_canal": {
+			    "super_fact_ventas_canal_has_entity__medida_ventas_canal": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_ventas_canal"
 			      },
@@ -3739,9 +4149,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_ventas_canal"
 			          }
 			        },
-			        "super_fact_ventas_canal.ventas_canal": {
+			        "entity__medida.ventas_canal": {
 			          "Target": {
-			            "Entity": "super_fact_ventas_canal.ventas_canal"
+			            "Entity": "entity__medida.ventas_canal"
 			          }
 			        }
 			      },
@@ -3752,7 +4162,7 @@ cultureInfo es-ES
 			              "Role": "super_fact_ventas_canal"
 			            },
 			            "Object": {
-			              "Role": "super_fact_ventas_canal.ventas_canal"
+			              "Role": "entity__medida.ventas_canal"
 			            }
 			          },
 			          "State": "Generated",
@@ -3827,7 +4237,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice_has_marcas_desest": {
+			    "super_fact_indice_has_entity__medida_marcas_desest": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_indices"
 			      },
@@ -3838,9 +4248,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_indice"
 			          }
 			        },
-			        "super_fact_indice.marcas_desest": {
+			        "entity__medida.marcas_desest": {
 			          "Target": {
-			            "Entity": "super_fact_indice.marcas_desest"
+			            "Entity": "entity__medida.marcas_desest"
 			          }
 			        }
 			      },
@@ -3851,7 +4261,7 @@ cultureInfo es-ES
 			              "Role": "super_fact_indice"
 			            },
 			            "Object": {
-			              "Role": "super_fact_indice.marcas_desest"
+			              "Role": "entity__medida.marcas_desest"
 			            }
 			          },
 			          "State": "Generated",
@@ -3860,7 +4270,7 @@ cultureInfo es-ES
 			        }
 			      ]
 			    },
-			    "super_fact_indice_has_indice_actual": {
+			    "super_fact_indice_has_entity__medida_indice_actual": {
 			      "Binding": {
 			        "ConceptualEntity": "super fact_indices"
 			      },
@@ -3871,9 +4281,9 @@ cultureInfo es-ES
 			            "Entity": "super_fact_indice"
 			          }
 			        },
-			        "super_fact_indice.indice_actual": {
+			        "entity__medida.indice_actual": {
 			          "Target": {
-			            "Entity": "super_fact_indice.indice_actual"
+			            "Entity": "entity__medida.indice_actual"
 			          }
 			        }
 			      },
@@ -3884,7 +4294,7 @@ cultureInfo es-ES
 			              "Role": "super_fact_indice"
 			            },
 			            "Object": {
-			              "Role": "super_fact_indice.indice_actual"
+			              "Role": "entity__medida.indice_actual"
 			            }
 			          },
 			          "State": "Generated",

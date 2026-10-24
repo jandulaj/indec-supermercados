@@ -1,43 +1,6 @@
 table 'super fact_ventas_medio_pago'
 	lineageTag: 7d4c8b3b-0a63-4f12-9390-aa8fd98a00c8
 
-	measure 'Ventas medio de pago' = ```
-			SUM ( 'super fact_ventas_medio_pago'[ventas_miles] )
-			
-			```
-		lineageTag: 97023541-40c3-4f45-941b-a7faac42ef53
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure '% medio de pago' =
-			
-			DIVIDE (
-			    [Ventas medio de pago],
-			    CALCULATE (
-			        [Ventas medio de pago],
-			        REMOVEFILTERS (
-			            'super fact_ventas_medio_pago'[medio_pago],
-			            'super fact_ventas_medio_pago'[medio_pago_desc],
-			            'super fact_ventas_medio_pago'[orden_medio]
-			        )
-			    )
-			)
-		formatString: 0\ %;-0\ %;0\ %
-		lineageTag: 72b81548-1de3-4778-921f-55f00a4e92f6
-
-	measure '% efectivo último año' =
-			
-			VAR anioUlt = YEAR ( CALCULATE ( MAX ( 'super fact_ventas_medio_pago'[periodo] ), ALLSELECTED ( 'super dim_periodo' ) ) )
-			RETURN
-			    CALCULATE (
-			        [% medio de pago],
-			        'super fact_ventas_medio_pago'[medio_pago] = "efectivo",
-			        ALLSELECTED ( 'super dim_periodo' ),
-			        'super dim_periodo'[anio] = anioUlt
-			    )
-		formatString: 0\ %;-0\ %;0\ %
-		lineageTag: a9a56706-c41b-465e-8f70-f625aaf5ce34
-
 	column periodo
 		dataType: dateTime
 		isHidden
