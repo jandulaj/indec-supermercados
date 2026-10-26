@@ -2400,6 +2400,27 @@ cultureInfo es-ES
 			          }
 			        }
 			      ]
+			    },
+			    "super_fact_indices.marcas_desest": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "super fact_indices",
+			          "ConceptualProperty": "Marcas desest"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Pico / piso / actual": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {

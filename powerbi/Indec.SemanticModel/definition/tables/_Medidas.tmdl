@@ -14,7 +14,7 @@ table _Medidas
 		displayFolder: Q1 Evolución
 		lineageTag: 912b7518-46ce-4256-a753-acc0ac53b5c3
 
-	measure 'Distancia al Máximo' = [Indice Actual]/[Indice Máximo]-1
+	measure 'Distancia al Máximo' = DIVIDE ( [Indice Actual], [Indice Máximo] ) - 1
 		formatString: 0\ %;-0\ %;0\ %
 		displayFolder: Q1 Evolución
 		lineageTag: 7baa348d-0749-4dcc-b361-cf79e8bd5988
@@ -43,10 +43,9 @@ table _Medidas
 			        ALL('super dim_periodo')
 			    )
 			```
+		formatString: 0.0
 		displayFolder: Q1 Evolución
 		lineageTag: 6ed3126c-af10-4d3e-8d84-8ba21fc7664c
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Marcas desest' =
 			
@@ -84,10 +83,9 @@ table _Medidas
 		lineageTag: 33c53d8d-035c-46b3-9c48-df232c55e27b
 
 	measure Nominal = AVERAGE('super fact_indices'[idx_corriente])
+		formatString: 0.0
 		displayFolder: Base
 		lineageTag: 3828d508-a95b-4937-b3d2-1ed812aaf452
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Peor año' = ```
 			
@@ -109,10 +107,9 @@ table _Medidas
 		lineageTag: 3ff7f8f1-a35b-48a7-b5b2-eb28aced1378
 
 	measure Precio = AVERAGE('super fact_indices'[idx_precios_impl])
+		formatString: 0.0
 		displayFolder: Base
 		lineageTag: d6487098-58ad-4b7e-b17a-b7dc188e0ae2
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Primer año' = CALCULATE(YEAR(MIN('super fact_indices'[periodo])), ALLSELECTED('super dim_periodo'))
 		formatString: 0
@@ -186,7 +183,7 @@ table _Medidas
 			VAR ultimo_indice = CALCULATE([Precio], 'super dim_periodo'[anio]=_ultimo_anio, REMOVEFILTERS('super dim_periodo'))
 			RETURN
 			    DIVIDE(ultimo_indice, primer_indice)
-		formatString: "   ""×""0.0"
+		formatString: "×"0.0
 		displayFolder: Q2 Precio vs volumen
 		lineageTag: 4d6acfc1-21b5-4b2a-878d-31b080950a59
 
@@ -219,10 +216,9 @@ table _Medidas
 		lineageTag: 52ba64f9-5fd1-4314-977a-1595dfa06756
 
 	measure Volumen = AVERAGE('super fact_indices'[idx_original])
+		formatString: 0.0
 		displayFolder: Base
 		lineageTag: 46eb8ce0-5f2a-481b-9ee8-43d1a4ff7ee8
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Ventas canal' = SUM ( 'super fact_ventas_canal'[ventas_miles] )
 		displayFolder: Base
