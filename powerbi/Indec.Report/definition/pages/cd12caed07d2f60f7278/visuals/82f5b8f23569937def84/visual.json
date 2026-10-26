@@ -23,7 +23,7 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Var precio 1er-último año completo"
+                  "Property": "Mult precio 1er-último año completo"
                 }
               },
               "queryRef": "super fact_indices.Var precio 1er-último año completo",
@@ -43,7 +43,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Var precio 1er-último año completo"
+                "Property": "Mult precio 1er-último año completo"
               }
             },
             "direction": "Descending"
@@ -303,5 +303,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "922b5a8a503b99c77ea6",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Mult precio 1er-último año completo"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

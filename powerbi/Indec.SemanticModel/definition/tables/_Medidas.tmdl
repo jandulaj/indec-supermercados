@@ -62,12 +62,12 @@ table _Medidas
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Mayor Inflación' = ```
+	measure 'Mayor inflación' = ```
 			
 			VAR inflacion =
 			    ADDCOLUMNS(
 			        FILTER(
-			            ALL('super dim_periodo'[anio]), ('super dim_periodo'[anio] > [Primer año]) && ('super dim_periodo'[anio] <= [Ultimo año])),
+			            ALL('super dim_periodo'[anio]), ('super dim_periodo'[anio] > [Primer año]) && ('super dim_periodo'[anio] <= [Último año])),
 			        "@precio", [Precio],
 			        "@precio_aa",
 			            VAR _anio = 'super dim_periodo'[anio] - 1
@@ -94,7 +94,7 @@ table _Medidas
 			VAR volumenes =
 			    ADDCOLUMNS (
 			        FILTER(
-						ALL ('super dim_periodo'[anio] ), ('super dim_periodo'[anio] > [Primer año]) &&  ('super dim_periodo'[anio] <= [Ultimo año])),	
+						ALL ('super dim_periodo'[anio] ), ('super dim_periodo'[anio] > [Primer año]) &&  ('super dim_periodo'[anio] <= [Último año])),	
 			        	"@volumen", 
 							[Volumen], 
 						"@volumen_aa", 
@@ -131,7 +131,7 @@ table _Medidas
 		displayFolder: Q1 Evolución
 		lineageTag: 305a318a-2b0e-4449-b525-006fdf91be8e
 
-	measure 'Ultimo año' = CALCULATE(YEAR(MAX('super fact_indices'[periodo])), ALLSELECTED('super dim_periodo'), MONTH('super fact_indices'[periodo]) = 12)
+	measure 'Último año' = CALCULATE(YEAR(MAX('super fact_indices'[periodo])), ALLSELECTED('super dim_periodo'), MONTH('super fact_indices'[periodo]) = 12)
 		formatString: 0
 		displayFolder: Auxiliares
 		lineageTag: 8957c20e-9045-46e1-99f3-b543aeedfe02
@@ -139,7 +139,7 @@ table _Medidas
 	measure 'Var volumen 1er-último año completo' =
 			
 			VAR _primer_anio = [Primer año]
-			VAR _ultimo_anio = [Ultimo año]
+			VAR _ultimo_anio = [Último año]
 			
 			VAR primer_indice = CALCULATE([Volumen], 'super dim_periodo'[anio]=_primer_anio, REMOVEFILTERS('super dim_periodo'))
 			VAR ultimo_indice = CALCULATE([Volumen], 'super dim_periodo'[anio]=_ultimo_anio, REMOVEFILTERS('super dim_periodo'))
@@ -149,7 +149,7 @@ table _Medidas
 		displayFolder: Q2 Precio vs volumen
 		lineageTag: f182f49e-8289-4c6f-b359-8beea85c1138
 
-	measure 'Var nominal 1er-último año completo' =
+	measure 'Mult nominal 1er-último año completo' =
 			
 			VAR meses_por_anio =
 			    ADDCOLUMNS (
@@ -165,23 +165,23 @@ table _Medidas
 			                )
 			    )
 			VAR _primer_anio = [Primer año]
-			VAR _ultimo_anio = [Ultimo año]
+			VAR _ultimo_anio = [Último año]
 			
 			VAR primer_indice = CALCULATE([Nominal], 'super dim_periodo'[anio]=_primer_anio, REMOVEFILTERS('super dim_periodo'))
 			VAR ultimo_indice = CALCULATE([Nominal], 'super dim_periodo'[anio]=_ultimo_anio, REMOVEFILTERS('super dim_periodo'))
 			RETURN
 			    DIVIDE(ultimo_indice, primer_indice)
-		formatString: "   ""×""0.0"
+		formatString: "×"0.0
 		displayFolder: Q2 Precio vs volumen
 		lineageTag: 5ec5a944-c65c-4ab0-9525-eef90a02dfd5
 
 		annotation PBI_FormatHint = {"isCustom":true}
 
-	measure 'Var precio 1er-último año completo' =
+	measure 'Mult precio 1er-último año completo' =
 			
 			VAR ultimo_periodo = CALCULATE(MAX('super fact_indices'[periodo]), REMOVEFILTERS('super dim_periodo'))
 			VAR _primer_anio = [Primer año]
-			VAR _ultimo_anio = [Ultimo año]
+			VAR _ultimo_anio = [Último año]
 			VAR primer_indice = CALCULATE([Precio], 'super dim_periodo'[anio]=_primer_anio, REMOVEFILTERS('super dim_periodo'))
 			VAR ultimo_indice = CALCULATE([Precio], 'super dim_periodo'[anio]=_ultimo_anio, REMOVEFILTERS('super dim_periodo'))
 			RETURN
@@ -192,27 +192,27 @@ table _Medidas
 
 		annotation PBI_FormatHint = {"isCustom":true}
 
-	measure 'Mult precio' = ```
+	measure 'Var anual precio' = ```
 			
 			VAR _anio = MAX('super dim_periodo'[anio])
 			VAR precio_aa = CALCULATE(
 			    [Precio], 
 			    'super dim_periodo'[anio]=_anio-1)
 			RETURN
-			    IF (_anio > [Primer año] && _anio <= [Ultimo año], DIVIDE([Precio],precio_aa)-1, BLANK())
+			    IF (_anio > [Primer año] && _anio <= [Último año], DIVIDE([Precio],precio_aa)-1, BLANK())
 			```
 		formatString: 0\ %;-0\ %;0\ %
 		displayFolder: Q2 Precio vs volumen
 		lineageTag: 4696bf06-7da2-487e-a164-d225bea5865c
 
-	measure 'Var volumen' = ```
+	measure 'Var anual volumen' = ```
 			
 			VAR _anio = MAX('super dim_periodo'[anio])
 			VAR volumen_aa = CALCULATE(
 			    [Volumen], 
 			    'super dim_periodo'[anio]=_anio-1)
 			RETURN
-			    IF (_anio > [Primer año] && _anio <= [Ultimo año], DIVIDE([Volumen],volumen_aa)-1, BLANK())
+			    IF (_anio > [Primer año] && _anio <= [Último año], DIVIDE([Volumen],volumen_aa)-1, BLANK())
 			```
 		formatString: 0.0\ %;-0.0\ %;0.0\ %
 		displayFolder: Q2 Precio vs volumen

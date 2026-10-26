@@ -2129,7 +2129,7 @@ cultureInfo es-ES
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Medidas",
-			          "ConceptualProperty": "Var precio 1er-último año completo"
+			          "ConceptualProperty": "Mult precio 1er-último año completo"
 			        }
 			      },
 			      "State": "Generated",
@@ -2161,7 +2161,7 @@ cultureInfo es-ES
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Medidas",
-			          "ConceptualProperty": "Var nominal 1er-último año completo"
+			          "ConceptualProperty": "Mult nominal 1er-último año completo"
 			        }
 			      },
 			      "State": "Generated",
@@ -2226,7 +2226,7 @@ cultureInfo es-ES
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Medidas",
-			          "ConceptualProperty": "Mayor Inflación"
+			          "ConceptualProperty": "Mayor inflación"
 			        }
 			      },
 			      "State": "Generated",
@@ -2259,7 +2259,7 @@ cultureInfo es-ES
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Medidas",
-			          "ConceptualProperty": "Var volumen"
+			          "ConceptualProperty": "Var anual volumen"
 			        }
 			      },
 			      "State": "Generated",
@@ -2315,7 +2315,7 @@ cultureInfo es-ES
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Medidas",
-			          "ConceptualProperty": "Ultimo año"
+			          "ConceptualProperty": "Último año"
 			        }
 			      },
 			      "State": "Generated",
@@ -2338,7 +2338,7 @@ cultureInfo es-ES
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Medidas",
-			          "ConceptualProperty": "Mult precio"
+			          "ConceptualProperty": "Var anual precio"
 			        }
 			      },
 			      "State": "Generated",

@@ -23,7 +23,7 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Var nominal 1er-último año completo"
+                  "Property": "Mult nominal 1er-último año completo"
                 }
               },
               "queryRef": "super fact_indices.Var nominal 1er-último año completo",
@@ -43,7 +43,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "Var nominal 1er-último año completo"
+                "Property": "Mult nominal 1er-último año completo"
               }
             },
             "direction": "Descending"
@@ -539,5 +539,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c88346290542c65bbdad",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Mult nominal 1er-último año completo"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

@@ -303,5 +303,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "8aae93355a0325bb679e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Medidas"
+              }
+            },
+            "Property": "Distancia al Máximo"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

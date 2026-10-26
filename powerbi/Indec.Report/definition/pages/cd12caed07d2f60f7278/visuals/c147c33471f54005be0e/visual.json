@@ -23,7 +23,7 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Mayor Inflación"
+                  "Property": "Mayor inflación"
                 }
               },
               "queryRef": "super fact_indices.mayor_inflacion",
@@ -536,7 +536,7 @@
                 "Entity": "_Medidas"
               }
             },
-            "Property": "Mayor Inflación"
+            "Property": "Mayor inflación"
           }
         },
         "type": "Advanced"

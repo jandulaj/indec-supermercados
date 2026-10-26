@@ -42,7 +42,7 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Var volumen"
+                  "Property": "Var anual volumen"
                 }
               },
               "queryRef": "_Medidas.var_volumen",
@@ -61,7 +61,7 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "Mult precio"
+                  "Property": "Var anual precio"
                 }
               },
               "queryRef": "_Medidas.var_precio",
@@ -582,7 +582,7 @@
                 "Entity": "_Medidas"
               }
             },
-            "Property": "Var volumen"
+            "Property": "Var anual volumen"
           }
         },
         "type": "Advanced"
@@ -596,7 +596,7 @@
                 "Entity": "_Medidas"
               }
             },
-            "Property": "Mult precio"
+            "Property": "Var anual precio"
           }
         },
         "type": "Advanced"
