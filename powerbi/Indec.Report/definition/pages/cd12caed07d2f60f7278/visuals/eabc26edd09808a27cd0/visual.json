@@ -23,7 +23,7 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "var volumen 1er-último año completo"
+                  "Property": "Var volumen 1er-último año completo"
                 }
               },
               "queryRef": "super fact_indices.Var volumen 1er-último año completo",
@@ -43,7 +43,7 @@
                     "Entity": "_Medidas"
                   }
                 },
-                "Property": "var volumen 1er-último año completo"
+                "Property": "Var volumen 1er-último año completo"
               }
             },
             "direction": "Descending"

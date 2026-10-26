@@ -42,7 +42,7 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "var_volumen"
+                  "Property": "Var volumen"
                 }
               },
               "queryRef": "_Medidas.var_volumen",
@@ -61,7 +61,7 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "var_precio"
+                  "Property": "Mult precio"
                 }
               },
               "queryRef": "_Medidas.var_precio",
@@ -582,7 +582,7 @@
                 "Entity": "_Medidas"
               }
             },
-            "Property": "var_volumen"
+            "Property": "Var volumen"
           }
         },
         "type": "Advanced"
@@ -596,7 +596,7 @@
                 "Entity": "_Medidas"
               }
             },
-            "Property": "var_precio"
+            "Property": "Mult precio"
           }
         },
         "type": "Advanced"

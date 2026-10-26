@@ -2097,7 +2097,7 @@ cultureInfo es-ES
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Medidas",
-			          "ConceptualProperty": "var volumen 1er-último año completo"
+			          "ConceptualProperty": "Var volumen 1er-último año completo"
 			        }
 			      },
 			      "State": "Generated",
@@ -2193,7 +2193,7 @@ cultureInfo es-ES
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Medidas",
-			          "ConceptualProperty": "peor_anio"
+			          "ConceptualProperty": "Peor año"
 			        }
 			      },
 			      "State": "Generated",
@@ -2226,7 +2226,7 @@ cultureInfo es-ES
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Medidas",
-			          "ConceptualProperty": "mayor_inflacion"
+			          "ConceptualProperty": "Mayor Inflación"
 			        }
 			      },
 			      "State": "Generated",
@@ -2259,7 +2259,7 @@ cultureInfo es-ES
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Medidas",
-			          "ConceptualProperty": "var_volumen"
+			          "ConceptualProperty": "Var volumen"
 			        }
 			      },
 			      "State": "Generated",
@@ -2292,7 +2292,7 @@ cultureInfo es-ES
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Medidas",
-			          "ConceptualProperty": "primer_anio"
+			          "ConceptualProperty": "Primer año"
 			        }
 			      },
 			      "State": "Generated",
@@ -2315,7 +2315,7 @@ cultureInfo es-ES
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Medidas",
-			          "ConceptualProperty": "ultimo_anio"
+			          "ConceptualProperty": "Ultimo año"
 			        }
 			      },
 			      "State": "Generated",
@@ -2338,7 +2338,7 @@ cultureInfo es-ES
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Medidas",
-			          "ConceptualProperty": "var_precio"
+			          "ConceptualProperty": "Mult precio"
 			        }
 			      },
 			      "State": "Generated",

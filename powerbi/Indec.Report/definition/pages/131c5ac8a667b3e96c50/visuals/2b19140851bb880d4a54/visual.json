@@ -23,7 +23,7 @@
                       "Entity": "_Medidas"
                     }
                   },
-                  "Property": "peor_anio"
+                  "Property": "Peor año"
                 }
               },
               "queryRef": "super fact_indices.peor_anio",
